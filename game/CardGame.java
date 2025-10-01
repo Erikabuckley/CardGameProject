@@ -23,11 +23,13 @@ public class CardGame{
 
     public static void main(String[] args) throws IOException{
         Scanner scanner = new Scanner(System.in);
+        // gather input data
         System.out.println("Please enter the number of players: ");
         String playerNumber = scanner.nextLine();
 
         System.out.println("Please enter location of plack to load: ");
         String fileName = scanner.nextLine();
+        // reads file and converts to
         readTxtFile(fileName);
         
     }
