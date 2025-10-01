@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class CardGame{
-    public static void readTxtFile(String fileName){
+    public static void readTxtFile(String fileName) throws IOException{ 
             // open a file for reading and pass to a buffer 
             BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
             
@@ -21,7 +21,7 @@ public class CardGame{
             System.out.println("### Exit readTxtFile()!");
         }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the number of players: ");
         String playerNumber = scanner.nextLine();
