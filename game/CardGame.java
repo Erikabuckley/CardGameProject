@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
-import java.util.random.*;
+import java.util.Random;
 
 public class CardGame{
     public static void readTxtFile(String fileName) throws IOException{ 
@@ -22,20 +22,20 @@ public class CardGame{
         System.out.println("### Exit readTxtFile()!");
     }
 
-    public void saveAsTextFile(String filename, String text) throws IOException{
+    public static void saveAsTextFile(String filename, String text) throws IOException{
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename));
-        bufferedWriter.write(text);
+        bufferedWriter.write(text + "\n");
         bufferedWriter.close();
     }
 
 
     public static void main(String[] args) throws IOException{
         int n = 4;
-        for (int i=0; i=8*n; i++) {
+        for (int i=0; i <= (8*n); i++) {
             Random r = new Random();
             int r1 = r.nextInt()+1; // so always greater than zero
             String str = String.valueOf(r1);
-            System.out.saveAsTextFile("test1.txt", str);
+            saveAsTextFile("test1.txt", str);
         }
 
         Scanner scanner = new Scanner(System.in);
