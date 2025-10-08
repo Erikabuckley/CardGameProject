@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
+import java.util.random.*;
 
 public class CardGame{
     public static void readTxtFile(String fileName) throws IOException{ 
@@ -22,12 +23,19 @@ public class CardGame{
         }
 
     public static void main(String[] args) throws IOException{
+        int n = 4;
+        for (int i=0; i=8*n; i++) {
+            Random r = new Random();
+            int r1 = r.nextInt(8*n);
+            System.out.println();
+        }
+
         Scanner scanner = new Scanner(System.in);
         // gather input data
         System.out.println("Please enter the number of players: ");
         String playerNumber = scanner.nextLine();
 
-        System.out.println("Please enter location of plack to load: ");
+        System.out.println("Please enter location of pack to load: ");
         String fileName = scanner.nextLine();
         // reads file and converts to
         readTxtFile(fileName);
