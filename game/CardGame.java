@@ -3,23 +3,30 @@ import java.util.Scanner;
 
 public class CardGame{
     public static void readTxtFile(String fileName) throws IOException{ 
-            // open a file for reading and pass to a buffer 
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
-            
-            // define a variable which will store the lines as we load them
-            String line;
+        // open a file for reading and pass to a buffer 
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
         
-            // loop to read and print lines until file end
-            line = String.format("Contents of '%s'", fileName);
-            while(line!=null) {
-                System.out.println(line);
-                line = bufferedReader.readLine();
-            } 
-            
-            // close buffer/file io stream
-            bufferedReader.close();
-            System.out.println("### Exit readTxtFile()!");
-        }
+        // define a variable which will store the lines as we load them
+        String line;
+    
+        // loop to read and print lines until file end
+        line = String.format("Contents of '%s'", fileName);
+        while(line!=null) {
+            System.out.println(line);
+            line = bufferedReader.readLine();
+        } 
+        
+        // close buffer/file io stream
+        bufferedReader.close();
+        System.out.println("### Exit readTxtFile()!");
+    }
+
+    public void saveAsTextFile(String filename) throws IOException{
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename));
+        bufferedWriter.write(this.toFormattedString());
+        bufferedWriter.close();
+    }
+
 
     public static void main(String[] args) throws IOException{
         Scanner scanner = new Scanner(System.in);
@@ -31,6 +38,7 @@ public class CardGame{
         String fileName = scanner.nextLine();
         // reads file and converts to
         readTxtFile(fileName);
+
         
     }
 }
