@@ -23,18 +23,19 @@ public class CardGame{
     }
 
     public static void saveAsTextFile(String filename, String text) throws IOException{
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename));
-        bufferedWriter.write(text + "\n");
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename,true));
+        bufferedWriter.write(text);
         bufferedWriter.close();
     }
 
 
     public static void main(String[] args) throws IOException{
         int n = 4;
-        for (int i=0; i <= (8*n); i++) {
-            Random r = new Random();
-            int r1 = r.nextInt()+1; // so always greater than zero
-            String str = String.valueOf(r1);
+        int max = 8 * n;
+        Random r = new Random();
+        for (int i=0; i < max; i++) {
+            int r1 = r.nextInt(1, 100); // so always greater than zero
+            String str = String.valueOf(r1) + "\n";
             saveAsTextFile("test1.txt", str);
         }
 
