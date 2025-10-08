@@ -33,8 +33,9 @@ public class CardGame{
         int n = 4;
         for (int i=0; i=8*n; i++) {
             Random r = new Random();
-            int r1 = r.nextInt(8*n);
-            System.out.println();
+            int r1 = r.nextInt()+1; // so always greater than zero
+            String str = String.valueOf(r1);
+            System.out.saveAsTextFile("test1.txt", str);
         }
 
         Scanner scanner = new Scanner(System.in);
