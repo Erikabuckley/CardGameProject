@@ -22,9 +22,9 @@ public class CardGame{
         System.out.println("### Exit readTxtFile()!");
     }
 
-    public void saveAsTextFile(String filename) throws IOException{
+    public void saveAsTextFile(String filename, String text) throws IOException{
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename));
-        bufferedWriter.write(this.toFormattedString());
+        bufferedWriter.write(text);
         bufferedWriter.close();
     }
 
