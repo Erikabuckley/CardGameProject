@@ -22,8 +22,8 @@ public class CardGame{
         System.out.println("### Exit readTxtFile()!");
     }
 
-    public static void saveAsTextFile(String filename, String text) throws IOException{
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename,true));
+    public static void saveToTxt(String filename, String text) throws IOException{
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename,true));//true for append
         bufferedWriter.write(text);
         bufferedWriter.close();
     }
@@ -36,19 +36,42 @@ public class CardGame{
         for (int i=0; i < max; i++) {
             int r1 = r.nextInt(1, 100); // so always greater than zero
             String str = String.valueOf(r1) + "\n";
-            saveAsTextFile("test1.txt", str);
+            saveToTxt("test1.txt", str);
         }
 
-        Scanner scanner = new Scanner(System.in);
-        // gather input data
-        System.out.println("Please enter the number of players: ");
-        String playerNumber = scanner.nextLine();
+        Boolean valid = false;
+        int playerNumber;
+        String fileName = "";
+        while (!valid){
+            valid = true;
+            Scanner scanner = new Scanner(System.in);
+            // gather input data
+            System.out.println("Please enter the number of players: ");
+            String playerNumberString = scanner.nextLine();
+            try{
+                playerNumber = Integer.parseInt(playerNumberString);
+                if (playerNumber <= 0){
+                    valid = false;
+                }
 
-        System.out.println("Please enter location of pack to load: ");
-        String fileName = scanner.nextLine();
-        // reads file and converts to
+            }catch (NumberFormatException e) {
+                valid = false;
+            }
+    
+        valid = false;
+        while (!valid){
+            valid = true;
+            System.out.println("Please enter location of pack to load: ");
+            fileName = scanner.nextLine();
+            File f = new File(fileName);
+            if (f.exists()){
+                valid = true;
+            }else{
+                valid = false;
+            }
+        }
+        // reads file
         readTxtFile(fileName);
-
-        
+        } 
     }
 }
