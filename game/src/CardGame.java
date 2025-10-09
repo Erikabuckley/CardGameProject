@@ -1,6 +1,7 @@
+package game;
+
 import java.io.*;
 import java.util.Scanner;
-import java.util.Random;
 import java.util.ArrayList;
 
 public class CardGame{
@@ -31,19 +32,15 @@ public class CardGame{
 
 
     public static void main(String[] args) throws IOException{
-        int n = 4;
-        int max = 8 * n;
-        Random r = new Random();
-        for (int i=0; i < max; i++) {
-            int r1 = r.nextInt(1, 100); // so always greater than zero
-            String str = String.valueOf(r1) + "\n";
-            saveToTxt("test1.txt", str);
-        }
-        
+
         //initialise variables
         Boolean valid = false;
         int playerNumber = 0;
         String fileName = "";
+        ArrayList<Player> players = new ArrayList<Player>();
+        ArrayList<Card> cards = new ArrayList<Card>();
+
+
         Scanner scanner = new Scanner(System.in);
         while (!valid){
             valid = true;
@@ -60,7 +57,6 @@ public class CardGame{
             }
         }
 
-        ArrayList<Player> players = new ArrayList<Player>();
         for (int x = 1; x < playerNumber ; x++){
             Player temp = new Player();
             players.add(temp);
@@ -76,9 +72,11 @@ public class CardGame{
                 valid = false;
             }
         }
+        scanner.close();
         
         // reads file
         readTxtFile(fileName);
+
 
 
         //split into queues
