@@ -11,7 +11,7 @@ public class testCode{
         for (int i=0; i < max; i++) {
             int r1 = r.nextInt(1, 100); // so always greater than zero
             String str = String.valueOf(r1) + "\n";
-            CardGame.saveToTxt("game/testFiles/test1.txt", str);
+            CardGame.saveToTxt("testFiles/test1.txt", str);
         }
     }
 }
