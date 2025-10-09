@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.Scanner;
 import java.util.Random;
+import java.util.ArrayList;
 
 public class CardGame{
     public static void readTxtFile(String fileName) throws IOException{ 
@@ -38,9 +39,10 @@ public class CardGame{
             String str = String.valueOf(r1) + "\n";
             saveToTxt("test1.txt", str);
         }
-
+        
+        //initialise variables
         Boolean valid = false;
-        int playerNumber;
+        int playerNumber = 0;
         String fileName = "";
         Scanner scanner = new Scanner(System.in);
         while (!valid){
@@ -53,11 +55,16 @@ public class CardGame{
                 if (playerNumber <= 0){
                     valid = false;
                 }
-
             }catch (NumberFormatException e) {                
                 valid = false;
             }
         }
+
+        ArrayList<Player> players = new ArrayList<Player>();
+        for (int x = 1; x < playerNumber ; x++){
+            Player temp = new Player();
+            players.add(temp);
+        }   
     
         valid = false;
         while (!valid){
@@ -69,8 +76,16 @@ public class CardGame{
                 valid = false;
             }
         }
+        
         // reads file
         readTxtFile(fileName);
+
+
+        //split into queues
+        /////////////////////
+        /// 
         
+
+
     }
 }
