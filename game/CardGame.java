@@ -42,9 +42,9 @@ public class CardGame{
         Boolean valid = false;
         int playerNumber;
         String fileName = "";
+        Scanner scanner = new Scanner(System.in);
         while (!valid){
             valid = true;
-            Scanner scanner = new Scanner(System.in);
             // gather input data
             System.out.println("Please enter the number of players: ");
             String playerNumberString = scanner.nextLine();
@@ -54,9 +54,10 @@ public class CardGame{
                     valid = false;
                 }
 
-            }catch (NumberFormatException e) {
+            }catch (NumberFormatException e) {                
                 valid = false;
             }
+        }
     
         valid = false;
         while (!valid){
@@ -64,14 +65,12 @@ public class CardGame{
             System.out.println("Please enter location of pack to load: ");
             fileName = scanner.nextLine();
             File f = new File(fileName);
-            if (f.exists()){
-                valid = true;
-            }else{
+            if (!f.exists()){
                 valid = false;
             }
         }
         // reads file
         readTxtFile(fileName);
-        } 
+        
     }
 }
