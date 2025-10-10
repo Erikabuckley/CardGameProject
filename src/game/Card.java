@@ -1,10 +1,14 @@
 package game;
 
 public class Card{
-    private int val;
+    private int value;
 
-    public Card(int val){
-        this.val = val;
+    public Card(int value){
+        this.value = value;
+    }
+
+    public int getValue() {
+        return this.value;
     }
 
 }

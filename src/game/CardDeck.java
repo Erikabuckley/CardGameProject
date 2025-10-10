@@ -1,5 +1,30 @@
 package game;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class CardDeck{
+
+    private ArrayList<Card> cardsTemp = new ArrayList();
+    private List<Card> cards = Collection.synchronizedList(cardsTemp);
+    private static int idCounter = 0;
+    private int id;
+
+    public CardDeck(Card card) {
+        this.cards.add(card);
+    }
+
+    public List<Card> getCards() {
+        return this.cards;
+    }
+
+    public void setCards(Card card) {
+        cards.add(card);
+    }
+    
+    public int getID() {
+        return this.id;
+    }
+
     
 }
