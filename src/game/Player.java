@@ -27,5 +27,7 @@ public class Player{
         cards.add(card);
     }
 
-
+    // add method checkIfWon()
+    // itterate over player cards
+    // check if card value is equal to id
 }

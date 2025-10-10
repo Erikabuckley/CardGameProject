@@ -44,10 +44,14 @@ public class CardGame{
         int playerNumber = 0;
         String fileName = "";
         ArrayList<Player> playersTemp = new ArrayList<Player>();
-        ArrayList<Card> cardsTemp = new ArrayList<Card>();
+        ArrayList<Card> cards = new ArrayList<Card>();
+        ArrayList<CardDeck> deckTemp = new ArrayList<CardDeck>();
+
+
         //make them thread safe
         List<Player> players = Collections.synchronizedList(playersTemp);
-        List<Card> cards = Collections.synchronizedList(cardsTemp);
+        List<CardDeck> decks = Collections.synchronizedList(deckTemp);
+
 
         Scanner scanner = new Scanner(System.in);
         while (!valid){
@@ -69,6 +73,11 @@ public class CardGame{
             Player temp = new Player();
             players.add(temp);
         }   
+
+        for (int x = 0; x < playerNumber ; x++){
+            CardDeck temp = new CardDeck();
+            decks.add(temp);
+        }
     
         valid = false;
         String [] lines;
@@ -82,21 +91,39 @@ public class CardGame{
             }
             // reads file
             lines = readTxtFile(fileName);
-            System.out.println(lines);
             if (lines.length != (8 *playerNumber)){
                 valid = false;
             }
         }
         scanner.close();
-
-
-
-
-        //split into queues
-        /////////////////////
-        /// 
         
+        // itterate through lines
+        // convert to int
+        // create card
+        // add to ArrrayList cards
+        
+        for (int x = 0; x < 4; x++){
+            for (int y = 0; y < playerNumber; x++){
+                players.get(y).addCard(cards.get(4*x + y));
+            }
+        }
 
+        List<Card> leftOver = cards.subList(16,(cards.size() -1));
 
+        for (int x = 0; x < 4; x++){
+            for (int y = 0; y < playerNumber; x++){
+                decks.get(y).addCard(leftOver.get(4*x + y));
+            }
+        }
+        
+        //check if someone has won
+            // write intitsl card values to file
+        // create threds
+        // run threds to simulate game 
+            // update deckx file
+            // record move in playerx file
+        // check winner
+            // record who won
+        // print to terminal
     }
 }
