@@ -10,15 +10,14 @@ public class CardDeck{
     private static int idCounter = 0;
     private int id;
 
-    public CardDeck(Card card) {
-        this.cards.add(card);
+    public CardDeck() {
     }
 
     public List<Card> getCards() {
         return this.cards;
     }
 
-    public void setCards(Card card) {
+    public void addCard(Card card) {
         cards.add(card);
     }
     

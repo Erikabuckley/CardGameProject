@@ -22,7 +22,7 @@ public class Player{
         return this.cards;
     }
 
-    public void setCards(Card card) {
+    public void addCard(Card card) {
         cards.add(card);
     }
 
