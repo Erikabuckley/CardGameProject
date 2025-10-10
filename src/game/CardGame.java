@@ -40,7 +40,6 @@ public class CardGame{
 
     public static void main(String[] args) throws IOException{
 
-        //initialise variables
         Boolean valid = false;
         int playerNumber = 0;
         String fileName = "";
