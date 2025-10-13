@@ -8,25 +8,16 @@ import java.util.List;
 
 public class CardGame{
     public static String[] readTxtFile(String fileName) throws IOException{ 
-        // list that holds strings of a file
         List<String> lines = new ArrayList<String>();
-      
-        // load data from file
         BufferedReader bf = new BufferedReader(new FileReader(fileName));
-      
-        // read entire line as string
         String line = bf.readLine();
       
-        // checking for end of file
         while (line != null) {
             lines.add(line);
             line = bf.readLine();
         }
       
-        // closing bufferreader object
         bf.close();
-      
-        // storing the data in arraylist to array
         String[] array = lines.toArray(new String[0]);
         return(array);
     }
@@ -79,10 +70,9 @@ public class CardGame{
             decks.add(temp);
         }
     
-        valid = false;
+        valid = true;
         String [] lines;
-        while (!valid){
-            valid = true;
+        do{
             System.out.println("Please enter location of pack to load: ");
             fileName = scanner.nextLine();
             File f = new File(fileName);
@@ -94,24 +84,24 @@ public class CardGame{
             if (lines.length != (8 *playerNumber)){
                 valid = false;
             }
-        }
+        } while (!valid);
         scanner.close();
         
-        // itterate through lines
-        // convert to int
-        // create card
-        // add to ArrrayList cards
-        
+        int max = lines.length;
+        for (int x =0; x < max; x++){
+            cards.add(new Card(Integer.parseInt(lines[x])));
+        }
+
         for (int x = 0; x < 4; x++){
-            for (int y = 0; y < playerNumber; x++){
+            for (int y = 0; y < playerNumber; y++){
                 players.get(y).addCard(cards.get(4*x + y));
             }
         }
 
-        List<Card> leftOver = cards.subList(16,(cards.size() -1));
+        List<Card> leftOver = cards.subList(16,(cards.size()));
 
         for (int x = 0; x < 4; x++){
-            for (int y = 0; y < playerNumber; x++){
+            for (int y = 0; y < playerNumber; y++){
                 decks.get(y).addCard(leftOver.get(4*x + y));
             }
         }
