@@ -21,6 +21,14 @@ public class CardDeck{
         return this.cards;
     }
 
+    public String formatOut(List<Card> cards){
+        String line = "";
+        for(Card c: cards){
+            line = line.concat(" " + Integer.toString(c.getValue()));
+        }
+        return(line);
+    }
+
     public void addCard(Card card) {
         cards.add(card);
     }
@@ -31,7 +39,7 @@ public class CardDeck{
 
     public void writeDeck() throws IOException{
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("deck" + Integer.toString(getId()) + "_output.txt"));
-        bufferedWriter.write("deck" + Integer.toString(getId()) + "contents: " + getCards());
+        bufferedWriter.write("deck" + Integer.toString(getId()) + "contents: " + formatOut(getCards()));
         bufferedWriter.close();
     }
 

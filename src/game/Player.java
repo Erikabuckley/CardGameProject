@@ -26,13 +26,21 @@ public class Player{
         return this.cards;
     }
 
+    public String formatOut(List<Card> cards){
+        String line = "";
+        for(Card c: cards){
+            line = line.concat(" " + Integer.toString(c.getValue()));
+        }
+        return(line);
+    }
+
     public void addCard(Card card) {
         cards.add(card);
     }
 
     public void writeInitial() throws IOException{
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("player"+ Integer.toString(getId()) +"_output.txt"));
-        bufferedWriter.write("Player " + Integer.toString(getId()) + " initial hand " + getCards());
+        bufferedWriter.write("Player " + Integer.toString(getId()) + " initial hand " + formatOut(getCards()));
         bufferedWriter.close();
     }
     public void writeGo(Card draw, Card discard) throws IOException{
@@ -40,7 +48,7 @@ public class Player{
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("player"+ id +"_output.txt", true));
         bufferedWriter.write("Player " + id + " draws " + draw + " from deck" + Integer.toString(getId() - 1));
         bufferedWriter.write("Player " + id  + " discards " + discard + " to deck " + Integer.toString((getId() + 1) % 4));
-        bufferedWriter.write("Player " + id + " current hand " + getCards());
+        bufferedWriter.write("Player " + id + " current hand " + formatOut(getCards()));
         bufferedWriter.close();
     }
 
@@ -49,7 +57,7 @@ public class Player{
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("player"+ id +"_output.txt", true));
         bufferedWriter.write("Player " + Integer.toString(winner) + " wins");
         bufferedWriter.write("Player " + id  + " exits");
-        bufferedWriter.write("Player " + id + " final hand " + getCards());
+        bufferedWriter.write("Player " + id + " final hand " + formatOut(getCards()));
         bufferedWriter.close();
     }
 

@@ -107,6 +107,11 @@ public class CardGame{
         }
 
         // write initial hands
+        for (Player p : players){
+            p.writeInitial();
+        }
+
+
         
         //check if someone has won
             // write intitsl card values to file
@@ -116,6 +121,10 @@ public class CardGame{
             // record move in playerx file
         // check winner
             // record who won
-        // print to terminal
+        
+        //for (Deck d : decks){
+        //    d.writeDeck();
+        //}
+        // print winner to terminal
     }
 }
