@@ -1,4 +1,8 @@
 package game;
+
+import java.io.*;
+import java.util.Scanner;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -21,8 +25,14 @@ public class CardDeck{
         cards.add(card);
     }
     
-    public int getID() {
+    public int getId() {
         return this.id;
+    }
+
+    public void writeDeck() throws IOException{
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("deck" + Integer.toString(getId()) + "_output.txt"));
+        bufferedWriter.write("deck" + Integer.toString(getId()) + "contents: " + getCards());
+        bufferedWriter.close();
     }
 
     

@@ -105,6 +105,8 @@ public class CardGame{
                 decks.get(y).addCard(leftOver.get(4*x + y));
             }
         }
+
+        // write initial hands
         
         //check if someone has won
             // write intitsl card values to file
