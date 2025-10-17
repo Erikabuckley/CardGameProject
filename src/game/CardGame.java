@@ -67,22 +67,26 @@ public class CardGame {
             decks.add(temp);
         }
 
-        valid = true;
-        String[] lines;
-        do {
+        valid = false;
+        String[] lines = null;
+        while (!valid) {
             System.out.println("Please enter location of pack to load: ");
             fileName = scanner.nextLine();
-            File f = new File(fileName);
-            if (!f.exists()) {//doesnt work
-                valid = false;
+            if (fileName.contains(".txt")){
+                File f = new File(fileName);
+                if (f.exists()) {
+                    lines = readTxtFile(fileName);
+                    scanner.close();
+                    if (lines.length == (8 * playerNumber)) {
+                        valid = true;
+                    }else{
+                        System.out.println("Inncorect file length. Try again.");
+                    }
+                }
+            }else{
+                System.out.println("File does not exist. Try again.");
             }
-            // reads file
-            lines = readTxtFile(fileName);
-            if (lines.length != (8 * playerNumber)) {//works
-                valid = false;
-            }
-        } while (!valid);
-        scanner.close();
+        }
 
         int max = lines.length;
         for (int x = 0; x < max; x++) {
@@ -107,6 +111,12 @@ public class CardGame {
         for (Player p : players) {
             p.writeInitial();
         }
+
+        for (Player p : players) {
+            if (!p.checkIfWon()){
+                p.draw(decks.get(p.getId() - 1));
+            }
+        } 
 
         // check if someone has won
         // write intitsl card values to file

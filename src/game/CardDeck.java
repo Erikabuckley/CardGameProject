@@ -43,8 +43,8 @@ public class CardDeck {
 
     public void writeDeck() throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(
-                new FileWriter("deck" + Integer.toString(getId()) + "_output.txt"));
-        bufferedWriter.write("deck" + Integer.toString(getId()) + "contents: " + formatOut(getCards()));
+                new FileWriter("outputFiles/deck" + Integer.toString(getId()) + "_output.txt"));
+        bufferedWriter.write("\ndeck" + Integer.toString(getId()) + "contents: " + formatOut(getCards()));
         bufferedWriter.close();
     }
 }

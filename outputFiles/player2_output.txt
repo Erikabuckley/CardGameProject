@@ -1,0 +1,2 @@
+Player 2 initial hand 1 62 20 26
+Player 2 draws 17 from deck 0

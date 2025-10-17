@@ -1,0 +1,2 @@
+Player 4 initial hand 83 4 37 14
+Player 4 draws 52 from deck 0

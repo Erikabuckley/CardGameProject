@@ -1,0 +1,2 @@
+Player 1 initial hand 9 86 77 1
+Player 1 draws 80 from deck 0

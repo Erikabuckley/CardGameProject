@@ -39,14 +39,14 @@ public class Player {
 
     public void writeInitial() throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(
-                new FileWriter("player" + Integer.toString(getId()) + "_output.txt"));
-        bufferedWriter.write("Player " + Integer.toString(getId()) + " initial hand " + formatOut(getCards()));
+                new FileWriter("outputFiles/player" + Integer.toString(getId()) + "_output.txt"));
+        bufferedWriter.write("Player " + Integer.toString(getId()) + " initial hand" + formatOut(getCards()));
         bufferedWriter.close();
     }
 
     public void writeEnd(int winner) throws IOException {
         String id = Integer.toString(getId());
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("player" + id + "_output.txt", true));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("outputFiles/player" + id + "_output.txt", true));
         bufferedWriter.write("Player " + Integer.toString(winner) + " wins");
         bufferedWriter.write("Player " + id + " exits");
         bufferedWriter.write("Player " + id + " final hand " + formatOut(getCards()));
@@ -74,10 +74,10 @@ public class Player {
                 deck.addCard(c);
 
                 String id = Integer.toString(getId());
-                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("player" + id + "_output.txt", true));
-                bufferedWriter.write("Player " + id + " discards " + Integer.toString(c.getValue()) + " to deck "
+                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("outputFiles/player" + id + "_output.txt", true));
+                bufferedWriter.write("\nPlayer " + id + " discards " + Integer.toString(c.getValue()) + " to deck "
                         + Integer.toString(deck.getId()));
-                bufferedWriter.write("Player " + id + " current hand " + formatOut(getCards()));
+                bufferedWriter.write("\nPlayer " + id + " current hand " + formatOut(getCards()));
                 bufferedWriter.close();
                 return;
             }
@@ -90,10 +90,9 @@ public class Player {
         addCard(temp);
 
         String id = Integer.toString(getId());
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("player" + id + "_output.txt", true));
-        bufferedWriter.write("Player " + id + " draws " + Integer.toString(temp.getValue()) + " from deck"
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("outputFiles/player" + id + "_output.txt", true));
+        bufferedWriter.write("\nPlayer " + id + " draws " + Integer.toString(temp.getValue()) + " from deck "
                 + Integer.toString(deck.getId()));
-        bufferedWriter.write("Player " + id + " current hand " + formatOut(getCards()));
         bufferedWriter.close();
     }
 }
