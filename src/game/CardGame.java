@@ -117,8 +117,8 @@ public class CardGame{
             // write intitsl card values to file
         // create threds
         // run threds to simulate game 
-            // update deckx file
-            // record move in playerx file
+            // update decks file
+            // record move in players file
         // check winner
             // record who won
         
