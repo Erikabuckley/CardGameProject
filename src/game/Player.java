@@ -38,8 +38,7 @@ public class Player {
     }
 
     public void writeInitial() throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(
-                new FileWriter("player" + Integer.toString(getId()) + "_output.txt"));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("player" + Integer.toString(getId()) + "_output.txt"));
         bufferedWriter.write("Player " + Integer.toString(getId()) + " initial hand " + formatOut(getCards()));
         bufferedWriter.close();
     }
