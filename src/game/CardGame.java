@@ -112,24 +112,29 @@ public class CardGame {
             p.writeInitial();
         }
 
+        // creates threads
         for (Player p : players) {
-            if (!p.checkIfWon()){
-                p.draw(decks.get(p.getId() - 1));
-            }
-        } 
-
-        // check if someone has won
-        // write intitsl card values to file
-        // create threds
-        // run threds to simulate game
-        // update decks file
-        // record move in players file
-        // check winner
-        // record who won
-
-        // for (Deck d : decks){
-        // d.writeDeck();
-        // }
+            new Thread("Player " + Integer.toString(p.getId())) {  
+                boolean gameOver = false;
+                public void run(){
+                    while(!gameOver){
+                        try {
+                            if (!p.checkIfWon()) {
+                                p.draw(decks.get(p.getId() - 1));
+                                p.discard(decks.get(p.getId() + 1));
+                            } else {
+                                gameOver = true;
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }.start();
+        }  
+        for (CardDeck d : decks){
+            d.writeDeck();
+        }
         // print winner to terminal
     }
 }

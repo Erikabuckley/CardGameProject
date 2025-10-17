@@ -1,2 +1,13 @@
 Player 1 initial hand 9 86 77 1
 Player 1 draws 80 from deck 0
+Player 1 discards 9 to deck 0
+Player 1 current hand  9 86 77 1 80
+Player 1 draws 44 from deck 0
+Player 1 discards 9 to deck 0
+Player 1 current hand  9 86 77 1 80 44
+Player 1 draws 80 from deck 0
+Player 1 discards 9 to deck 0
+Player 1 current hand  9 86 77 1 80 44 80
+Player 1 draws 23 from deck 0
+Player 1 discards 9 to deck 0
+Player 1 current hand  9 86 77 1 80 44 80 23
