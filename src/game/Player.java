@@ -64,8 +64,24 @@ public class Player {
     }
 
     // add method checkIfWon()
-    // itterate over player cards
-    // check if card value is equal to id
+    public Bool checkIfWon() {
+        Bool won = False;
+        id = getId();
+        // iterate over player cards must always be four
+        for (Card c : cards) {
+            line = line.concat(" " + Integer.toString(c.getValue()));
+        }
+            // i need to get the cards that the player has, not from the card deck.
+            // for each card in the List
+            // ask if it is the same as the id
+            // if it is all the same then won=True then the player has won
+
+
+        // check if card value is equal to id
+        
+
+        
+    }
 
     // discard
 
