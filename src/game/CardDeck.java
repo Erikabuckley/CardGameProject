@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class CardDeck{
-    private static int idCounter = 0;
+    private static int idCounter = 1;
     private int id;
     private ArrayList<Card> cardsTemp = new ArrayList<Card>();
     private List<Card> cards = Collections.synchronizedList(cardsTemp); // makes it threadsafe

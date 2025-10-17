@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Player{
-    private static int idCounter = 0; // counter for unique player IDs
+    private static int idCounter = 1; // counter for unique player IDs
     private int id; // player's unique playerId
     private ArrayList<Card> cardsTemp = new ArrayList<Card>();  
     private List<Card> cards = Collections.synchronizedList(cardsTemp); // synchronised list makes it threadsafe
