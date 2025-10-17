@@ -32,6 +32,11 @@ public class CardDeck {
         cards.add(card);
     }
 
+    public Card removeCard() {
+        return cards.removeFirst();
+    }
+
+
     public int getId() {
         return this.id;
     }

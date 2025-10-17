@@ -44,15 +44,6 @@ public class Player {
         bufferedWriter.close();
     }
 
-    public void writeGo(Card draw, Card discard) throws IOException {
-        String id = Integer.toString(getId());
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("player" + id + "_output.txt", true));
-        bufferedWriter.write("Player " + id + " draws " + draw + " from deck" + Integer.toString(getId() - 1));
-        bufferedWriter
-                .write("Player " + id + " discards " + discard + " to deck " + Integer.toString((getId() + 1) % 4));
-        bufferedWriter.write("Player " + id + " current hand " + formatOut(getCards()));
-        bufferedWriter.close();
-    }
 
     public void writeEnd(int winner) throws IOException {
         String id = Integer.toString(getId());
@@ -68,6 +59,31 @@ public class Player {
     // check if card value is equal to id
 
     // discard
+    public void discard(CardDeck deck) throws IOException{
+        List<Card> cards = getCards();
+        for (Card c : cards){
+            if (c.getValue() != getId()){
+                deck.addCard(c);
+
+                String id = Integer.toString(getId());
+                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("player" + id + "_output.txt", true));
+                bufferedWriter.write("Player " + id + " discards " +  Integer.toString(c.getValue()) + " to deck " + Integer.toString(deck.getId()));
+                bufferedWriter.write("Player " + id + " current hand " + formatOut(getCards()));
+                bufferedWriter.close();
+                return;
+            }
+        }
+    }
 
     // draw
+    public void draw(CardDeck deck) throws IOException{
+        Card temp = deck.removeCard();
+        addCard(temp);
+        
+        String id = Integer.toString(getId());
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("player" + id + "_output.txt", true));
+        bufferedWriter.write("Player " + id + " draws " + Integer.toString(temp.getValue()) + " from deck" + Integer.toString(deck.getId()));
+        bufferedWriter.write("Player " + id + " current hand " + formatOut(getCards()));
+        bufferedWriter.close();
+    }
 }
