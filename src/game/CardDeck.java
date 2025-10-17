@@ -7,12 +7,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class CardDeck{
+public class CardDeck {
     private static int idCounter = 1;
     private int id;
     private ArrayList<Card> cardsTemp = new ArrayList<Card>();
     private List<Card> cards = Collections.synchronizedList(cardsTemp); // makes it threadsafe
-    
 
     public CardDeck() {
     }
@@ -21,27 +20,26 @@ public class CardDeck{
         return this.cards;
     }
 
-    public String formatOut(List<Card> cards){
+    public String formatOut(List<Card> cards) {
         String line = "";
-        for(Card c: cards){
+        for (Card c : cards) {
             line = line.concat(" " + Integer.toString(c.getValue()));
         }
-        return(line);
+        return (line);
     }
 
     public void addCard(Card card) {
         cards.add(card);
     }
-    
+
     public int getId() {
         return this.id;
     }
 
-    public void writeDeck() throws IOException{
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("deck" + Integer.toString(getId()) + "_output.txt"));
+    public void writeDeck() throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(
+                new FileWriter("deck" + Integer.toString(getId()) + "_output.txt"));
         bufferedWriter.write("deck" + Integer.toString(getId()) + "contents: " + formatOut(getCards()));
         bufferedWriter.close();
     }
-
-    
 }

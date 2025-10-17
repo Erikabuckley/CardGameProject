@@ -1,12 +1,13 @@
 package game;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Card{
+public class Card {
     private int value;
 
-    public Card(int value){
+    public Card(int value) {
         this.value = value;
     }
 
