@@ -73,12 +73,12 @@ public class CardGame {
             System.out.println("Please enter location of pack to load: ");
             fileName = scanner.nextLine();
             File f = new File(fileName);
-            if (!f.exists()) {
+            if (!f.exists()) {//doesnt work
                 valid = false;
             }
             // reads file
             lines = readTxtFile(fileName);
-            if (lines.length != (8 * playerNumber)) {
+            if (lines.length != (8 * playerNumber)) {//works
                 valid = false;
             }
         } while (!valid);

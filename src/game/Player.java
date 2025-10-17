@@ -38,11 +38,11 @@ public class Player {
     }
 
     public void writeInitial() throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("player" + Integer.toString(getId()) + "_output.txt"));
+        BufferedWriter bufferedWriter = new BufferedWriter(
+                new FileWriter("player" + Integer.toString(getId()) + "_output.txt"));
         bufferedWriter.write("Player " + Integer.toString(getId()) + " initial hand " + formatOut(getCards()));
         bufferedWriter.close();
     }
-
 
     public void writeEnd(int winner) throws IOException {
         String id = Integer.toString(getId());
@@ -54,38 +54,29 @@ public class Player {
     }
 
     // add method checkIfWon()
-    public Bool checkIfWon() {
+    public boolean checkIfWon() {
         int count = 0;
         // iterate over player cards must always be four
         List<Card> cards = getCards();
-        for (Card c : cards){
-            if (c.getValue() == getId()){
-                count++ ;
+        for (Card c : cards) {
+            if (c.getValue() == getId()) {
+                count++;
             }
         }
         return count == 4;
-            // i need to get the cards that the player has, not from the card deck.
-            // for each card in the List
-            // ask if it is the same as the id
-            // if it is all the same then won=True then the player has won
-
-
-        // check if card value is equal to id
-        
-
-        
     }
 
     // discard
-    public void discard(CardDeck deck) throws IOException{
+    public void discard(CardDeck deck) throws IOException {
         List<Card> cards = getCards();
-        for (Card c : cards){
-            if (c.getValue() != getId()){
+        for (Card c : cards) {
+            if (c.getValue() != getId()) {
                 deck.addCard(c);
 
                 String id = Integer.toString(getId());
                 BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("player" + id + "_output.txt", true));
-                bufferedWriter.write("Player " + id + " discards " +  Integer.toString(c.getValue()) + " to deck " + Integer.toString(deck.getId()));
+                bufferedWriter.write("Player " + id + " discards " + Integer.toString(c.getValue()) + " to deck "
+                        + Integer.toString(deck.getId()));
                 bufferedWriter.write("Player " + id + " current hand " + formatOut(getCards()));
                 bufferedWriter.close();
                 return;
@@ -94,13 +85,14 @@ public class Player {
     }
 
     // draw
-    public void draw(CardDeck deck) throws IOException{
+    public void draw(CardDeck deck) throws IOException {
         Card temp = deck.removeCard();
         addCard(temp);
-        
+
         String id = Integer.toString(getId());
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("player" + id + "_output.txt", true));
-        bufferedWriter.write("Player " + id + " draws " + Integer.toString(temp.getValue()) + " from deck" + Integer.toString(deck.getId()));
+        bufferedWriter.write("Player " + id + " draws " + Integer.toString(temp.getValue()) + " from deck"
+                + Integer.toString(deck.getId()));
         bufferedWriter.write("Player " + id + " current hand " + formatOut(getCards()));
         bufferedWriter.close();
     }
