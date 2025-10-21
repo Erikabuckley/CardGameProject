@@ -112,16 +112,17 @@ public class CardGame {
             p.writeInitial();
         }
 
+        final int numPlayers = playerNumber;
         // creates threads
         for (Player p : players) {
             new Thread("Player " + Integer.toString(p.getId())) {  
-                boolean gameOver = false;
-                public void run(){
+                public volatile static boolean gameOver = false;
+                @Override public void run(){
                     while(!gameOver){
                         try {
                             if (!p.checkIfWon()) {
                                 p.draw(decks.get(p.getId() - 1));
-                                p.discard(decks.get(p.getId() + 1));
+                                p.discard(decks.get((p.getId() + 1) % numPlayers));
                             } else {
                                 gameOver = true;
                             }
@@ -131,10 +132,17 @@ public class CardGame {
                     }
                 }
             }.start();
-        }  
+        }
+          
         for (CardDeck d : decks){
             d.writeDeck();
         }
-        // print winner to terminal
+        
+    //     // write end hands
+    //     for (Player p : players) {
+    //         p.writeEnd(pWinner);
+    //     }
+    //     //print winner to terminal
+    //     system.out.println();
     }
 }

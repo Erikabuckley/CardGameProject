@@ -1,13 +1,49 @@
 Player 1 initial hand 9 86 77 1
 Player 1 draws 80 from deck 0
 Player 1 discards 9 to deck 0
-Player 1 current hand  9 86 77 1 80
+Player 1 current hand  86 77 1 80
 Player 1 draws 44 from deck 0
-Player 1 discards 9 to deck 0
-Player 1 current hand  9 86 77 1 80 44
+Player 1 discards 86 to deck 0
+Player 1 current hand  77 1 80 44
+Player 1 draws 80 from deck 0
+Player 1 discards 77 to deck 0
+Player 1 current hand  1 80 44 80
+Player 1 draws 23 from deck 0
+Player 1 discards 80 to deck 0
+Player 1 current hand  1 44 80 23
+Player 1 draws 25 from deck 0
+Player 1 discards 44 to deck 0
+Player 1 current hand  1 80 23 25
+Player 1 draws 48 from deck 0
+Player 1 discards 80 to deck 0
+Player 1 current hand  1 23 25 48
+Player 1 draws 5 from deck 0
+Player 1 discards 23 to deck 0
+Player 1 current hand  1 25 48 5
+Player 1 draws 53 from deck 0
+Player 1 discards 25 to deck 0
+Player 1 current hand  1 48 5 53
+Player 1 draws 4 from deck 0
+Player 1 discards 48 to deck 0
+Player 1 current hand  1 5 53 4
+Player 1 draws 25 from deck 0
+Player 1 discards 5 to deck 0
+Player 1 current hand  1 53 4 25
+Player 1 draws 96 from deck 0
+Player 1 discards 53 to deck 0
+Player 1 current hand  1 4 25 96
+Player 1 draws 85 from deck 0
+Player 1 discards 4 to deck 0
+Player 1 current hand  1 25 96 85
+Player 1 draws 9 from deck 0
+Player 1 discards 25 to deck 0
+Player 1 current hand  1 96 85 9
+Player 1 draws 86 from deck 0
+Player 1 discards 96 to deck 0
+Player 1 current hand  1 85 9 86
+Player 1 draws 77 from deck 0
+Player 1 discards 85 to deck 0
+Player 1 current hand  1 9 86 77
 Player 1 draws 80 from deck 0
 Player 1 discards 9 to deck 0
-Player 1 current hand  9 86 77 1 80 44 80
-Player 1 draws 23 from deck 0
-Player 1 discards 9 to deck 0
-Player 1 current hand  9 86 77 1 80 44 80 23
+Player 1 current hand  1 86 77 80

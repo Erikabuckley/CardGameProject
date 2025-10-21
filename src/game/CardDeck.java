@@ -28,11 +28,11 @@ public class CardDeck {
         return (line);
     }
 
-    public void addCard(Card card) {
+    public synchronized void addCard(Card card) {
         cards.add(card);
     }
 
-    public Card removeCard() {
+    public synchronized Card removeCard() {
         return cards.removeFirst();
     }
 
@@ -43,8 +43,8 @@ public class CardDeck {
 
     public void writeDeck() throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(
-                new FileWriter("outputFiles/deck" + Integer.toString(getId()) + "_output.txt", true));
-        bufferedWriter.write("\ndeck" + Integer.toString(getId()) + "contents: " + formatOut(getCards()));
+                new FileWriter("outputFiles/deck" + Integer.toString(getId()) + "_output.txt"));
+        bufferedWriter.write("deck" + Integer.toString(getId()) + " contents: " + formatOut(getCards()));
         bufferedWriter.close();
     }
 }

@@ -1,2 +1,37 @@
 Player 3 initial hand 25 48 5 53
 Player 3 draws 4 from deck 0
+Player 3 discards 25 to deck 0
+Player 3 current hand  48 5 53 4
+Player 3 draws 25 from deck 0
+Player 3 discards 48 to deck 0
+Player 3 current hand  5 53 4 25
+Player 3 draws 96 from deck 0
+Player 3 discards 5 to deck 0
+Player 3 current hand  53 4 25 96
+Player 3 draws 85 from deck 0
+Player 3 discards 53 to deck 0
+Player 3 current hand  4 25 96 85
+Player 3 draws 9 from deck 0
+Player 3 discards 4 to deck 0
+Player 3 current hand  25 96 85 9
+Player 3 draws 86 from deck 0
+Player 3 discards 25 to deck 0
+Player 3 current hand  96 85 9 86
+Player 3 draws 77 from deck 0
+Player 3 discards 96 to deck 0
+Player 3 current hand  85 9 86 77
+Player 3 draws 80 from deck 0
+Player 3 discards 85 to deck 0
+Player 3 current hand  9 86 77 80
+Player 3 draws 44 from deck 0
+Player 3 discards 9 to deck 0
+Player 3 current hand  86 77 80 44
+Player 3 draws 80 from deck 0
+Player 3 discards 86 to deck 0
+Player 3 current hand  77 80 44 80
+Player 3 draws 23 from deck 0
+Player 3 discards 77 to deck 0
+Player 3 current hand  80 44 80 23
+Player 3 draws 25 from deck 0
+Player 3 discards 80 to deck 0
+Player 3 current hand  44 80 23 25

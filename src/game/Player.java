@@ -33,8 +33,12 @@ public class Player {
         return (line);
     }
 
-    public void addCard(Card card) {
+    public synchronized void addCard(Card card) {
         cards.add(card);
+    }
+
+    public synchronized void removeCard(Card card) {
+        cards.remove(card);
     }
 
     public void writeInitial() throws IOException {
@@ -53,8 +57,7 @@ public class Player {
         bufferedWriter.close();
     }
 
-    // add method checkIfWon()
-    public boolean checkIfWon() {
+    public synchronized boolean checkIfWon() {
         int count = 0;
         // iterate over player cards must always be four
         List<Card> cards = getCards();
@@ -67,7 +70,7 @@ public class Player {
     }
 
     // discard
-    public void discard(CardDeck deck) throws IOException {
+    public synchronized void discard(CardDeck deck) throws IOException {
         List<Card> cards = getCards();
         for (Card c : cards) {
             if (c.getValue() != getId()) {
@@ -77,6 +80,7 @@ public class Player {
                 BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("outputFiles/player" + id + "_output.txt", true));
                 bufferedWriter.write("\nPlayer " + id + " discards " + Integer.toString(c.getValue()) + " to deck "
                         + Integer.toString(deck.getId()));
+                removeCard(c);
                 bufferedWriter.write("\nPlayer " + id + " current hand " + formatOut(getCards()));
                 bufferedWriter.close();
                 return;
@@ -85,7 +89,7 @@ public class Player {
     }
 
     // draw
-    public void draw(CardDeck deck) throws IOException {
+    public synchronized void draw(CardDeck deck) throws IOException {
         Card temp = deck.removeCard();
         addCard(temp);
 

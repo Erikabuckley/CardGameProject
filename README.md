@@ -49,7 +49,8 @@ cd your-project
 ### Running the project
 
 ```bash
-wrtie code to run here
+javac -d bin src/game/*
+java -cp bin game/CardGame
 ```
 
 ## License

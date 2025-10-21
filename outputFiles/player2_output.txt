@@ -1,13 +1,25 @@
 Player 2 initial hand 1 62 20 26
 Player 2 draws 17 from deck 0
 Player 2 discards 1 to deck 0
-Player 2 current hand  1 62 20 26 17
+Player 2 current hand  62 20 26 17
 Player 2 draws 66 from deck 0
-Player 2 discards 1 to deck 0
-Player 2 current hand  1 62 20 26 17 66
+Player 2 discards 62 to deck 0
+Player 2 current hand  20 26 17 66
 Player 2 draws 98 from deck 0
-Player 2 discards 1 to deck 0
-Player 2 current hand  1 62 20 26 17 66 98
+Player 2 discards 20 to deck 0
+Player 2 current hand  26 17 66 98
 Player 2 draws 56 from deck 0
-Player 2 discards 1 to deck 0
-Player 2 current hand  1 62 20 26 17 66 98 56
+Player 2 discards 26 to deck 0
+Player 2 current hand  17 66 98 56
+Player 2 draws 83 from deck 0
+Player 2 discards 17 to deck 0
+Player 2 current hand  66 98 56 83
+Player 2 draws 37 from deck 0
+Player 2 discards 66 to deck 0
+Player 2 current hand  98 56 83 37
+Player 2 draws 14 from deck 0
+Player 2 discards 98 to deck 0
+Player 2 current hand  56 83 37 14
+Player 2 draws 52 from deck 0
+Player 2 discards 56 to deck 0
+Player 2 current hand  83 37 14 52

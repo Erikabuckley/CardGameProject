@@ -1,5 +1,0 @@
-by 8th oct - basic layout, flow chart and oop
-by 15th oct - basic code
-by 22nd oct - threading 
-by 29th oct - testing done
-by 2nd nov - submit
