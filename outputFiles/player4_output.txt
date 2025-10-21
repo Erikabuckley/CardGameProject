@@ -1,13 +1,16 @@
 Player 4 initial hand 83 4 37 14
-Player 4 draws 52 from deck 0
-Player 4 discards 83 to deck 0
+Player 4 draws 52 from deck 4
+Player 4 discards 83 to deck 2
 Player 4 current hand  4 37 14 52
-Player 4 draws 11 from deck 0
-Player 4 discards 37 to deck 0
-Player 4 current hand  4 14 52 11
-Player 4 draws 62 from deck 0
-Player 4 discards 14 to deck 0
-Player 4 current hand  4 52 11 62
-Player 4 draws 1 from deck 0
-Player 4 discards 52 to deck 0
-Player 4 current hand  4 11 62 1
+Player 4 draws 11 from deck 4
+Player 4 discards 11 to deck 2
+Player 4 current hand  4 37 14 52
+Player 4 draws 62 from deck 4
+Player 4 discards 14 to deck 2
+Player 4 current hand  4 37 52 62
+Player 4 draws 1 from deck 4
+Player 4 discards 62 to deck 2
+Player 4 current hand  4 37 52 1
+Player 4 draws 17 from deck 4
+Player 4 discards 1 to deck 2
+Player 4 current hand  4 37 52 17

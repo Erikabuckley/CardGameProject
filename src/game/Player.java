@@ -5,23 +5,26 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class Player {
     private static int idCounter = 1; // counter for unique player IDs
     private int id; // player's unique playerId
     private ArrayList<Card> cardsTemp = new ArrayList<Card>();
     private List<Card> cards = Collections.synchronizedList(cardsTemp); // synchronised list makes it threadsafe
+    private static final Random random = new Random();
+
 
     public Player() {
         this.id = idCounter++;
 
     }
 
-    public int getId() {
+    public synchronized int getId() {
         return this.id;
     }
 
-    public List<Card> getCards() {
+    public synchronized List<Card> getCards() {
         return this.cards;
     }
 
@@ -69,22 +72,27 @@ public class Player {
         return count == 4;
     }
 
-    // discard
     public synchronized void discard(CardDeck deck) throws IOException {
-        List<Card> cards = getCards();
+        List<Card> validCards = new ArrayList<>();
         for (Card c : cards) {
             if (c.getValue() != getId()) {
-                deck.addCard(c);
-
-                String id = Integer.toString(getId());
-                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("outputFiles/player" + id + "_output.txt", true));
-                bufferedWriter.write("\nPlayer " + id + " discards " + Integer.toString(c.getValue()) + " to deck "
-                        + Integer.toString(deck.getId()));
-                removeCard(c);
-                bufferedWriter.write("\nPlayer " + id + " current hand " + formatOut(getCards()));
-                bufferedWriter.close();
-                return;
+                validCards.add(c);
             }
+        }
+
+        if (!validCards.isEmpty()) {
+            // pick a random card from validCards
+            Card toDiscard = validCards.get(random.nextInt(validCards.size()));
+            deck.addCard(toDiscard);
+            removeCard(toDiscard);
+
+            // write to output
+            String id = Integer.toString(getId());
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(
+                    "outputFiles/player" + id + "_output.txt", true));
+            bufferedWriter.write("\nPlayer " + id + " discards " + toDiscard.getValue() + " to deck " + deck.getId());
+            bufferedWriter.write("\nPlayer " + id + " current hand " + formatOut(getCards()));
+            bufferedWriter.close();
         }
     }
 

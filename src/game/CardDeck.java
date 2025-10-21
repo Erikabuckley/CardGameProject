@@ -14,9 +14,10 @@ public class CardDeck {
     private List<Card> cards = Collections.synchronizedList(cardsTemp); // makes it threadsafe
 
     public CardDeck() {
+        this.id = idCounter++;
     }
 
-    public List<Card> getCards() {
+    public synchronized List<Card> getCards() {
         return this.cards;
     }
 
@@ -33,11 +34,11 @@ public class CardDeck {
     }
 
     public synchronized Card removeCard() {
-        return cards.removeFirst();
+        return cards.remove(0);
     }
 
 
-    public int getId() {
+    public synchronized int getId() {
         return this.id;
     }
 

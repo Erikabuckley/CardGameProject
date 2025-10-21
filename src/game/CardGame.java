@@ -7,6 +7,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class CardGame {
+    
+    private static volatile boolean gameOver = false;
+
     public static String[] readTxtFile(String fileName) throws IOException {
         List<String> lines = new ArrayList<String>();
         BufferedReader bf = new BufferedReader(new FileReader(fileName));
@@ -113,10 +116,10 @@ public class CardGame {
         }
 
         final int numPlayers = playerNumber;
+        
         // creates threads
         for (Player p : players) {
             new Thread("Player " + Integer.toString(p.getId())) {  
-                public volatile static boolean gameOver = false;
                 @Override public void run(){
                     while(!gameOver){
                         try {
@@ -125,6 +128,10 @@ public class CardGame {
                                 p.discard(decks.get((p.getId() + 1) % numPlayers));
                             } else {
                                 gameOver = true;
+                                for (Player player : players) { 
+                                    player.writeEnd(p.getId()); 
+                                } 
+                                System.out.println("Game over player: " + Integer.toString(p.getId())+ " wins");
                             }
                         } catch (IOException e) {
                             e.printStackTrace();
