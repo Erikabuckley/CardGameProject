@@ -21,7 +21,7 @@ public class CardDeck {
         return this.cards;
     }
 
-    public String formatOut(List<Card> cards) {
+    public synchronized String formatOut(List<Card> cards) {
         String line = "";
         for (Card c : cards) {
             line = line.concat(" " + Integer.toString(c.getValue()));
@@ -42,7 +42,7 @@ public class CardDeck {
         return this.id;
     }
 
-    public void writeDeck() throws IOException {
+    public synchronized void writeDeck() throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(
                 new FileWriter("outputFiles/deck" + Integer.toString(getId()) + "_output.txt"));
         bufferedWriter.write("deck" + Integer.toString(getId()) + " contents: " + formatOut(getCards()));

@@ -1,1 +1,1 @@
-deck3 contents:  25 96 85
+deck3 contents:  4 25 96 85 86

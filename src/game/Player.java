@@ -28,7 +28,7 @@ public class Player {
         return this.cards;
     }
 
-    public String formatOut(List<Card> cards) {
+    public synchronized String formatOut(List<Card> cards) {
         String line = "";
         for (Card c : cards) {
             line = line.concat(" " + Integer.toString(c.getValue()));
@@ -44,14 +44,14 @@ public class Player {
         cards.remove(card);
     }
 
-    public void writeInitial() throws IOException {
+    public synchronized void writeInitial() throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(
                 new FileWriter("outputFiles/player" + Integer.toString(getId()) + "_output.txt"));
         bufferedWriter.write("Player " + Integer.toString(getId()) + " initial hand" + formatOut(getCards()));
         bufferedWriter.close();
     }
 
-    public void writeEnd(int winner) throws IOException {
+    public synchronized void writeEnd(int winner) throws IOException {
         String id = Integer.toString(getId());
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("outputFiles/player" + id + "_output.txt", true));
         bufferedWriter.write("Player " + Integer.toString(winner) + " wins");

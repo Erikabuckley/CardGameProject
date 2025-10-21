@@ -101,8 +101,8 @@ public class CardGame {
                 players.get(y).addCard(cards.get(4 * x + y));
             }
         }
-
-        List<Card> leftOver = cards.subList(16, (cards.size()));
+        int totalPlayerCards = 4 * playerNumber;
+        List<Card> leftOver = cards.subList(totalPlayerCards, (cards.size()));
 
         for (int x = 0; x < 4; x++) {
             for (int y = 0; y < playerNumber; y++) {
@@ -120,36 +120,32 @@ public class CardGame {
         // creates threads
         for (Player p : players) {
             new Thread("Player " + Integer.toString(p.getId())) {  
-                @Override public void run(){
-                    while(!gameOver){
+                public void run(){
+                    while(!gameOver){ //sets flag
                         try {
                             if (!p.checkIfWon()) {
-                                p.draw(decks.get(p.getId() - 1));
-                                p.discard(decks.get((p.getId() + 1) % numPlayers));
+                                synchronized(CardGame.class) {
+                                    p.draw(decks.get(p.getId() - 1));
+                                    p.discard(decks.get((p.getId() + 1) % numPlayers));
+                                }
                             } else {
                                 gameOver = true;
                                 for (Player player : players) { 
                                     player.writeEnd(p.getId()); 
                                 } 
                                 System.out.println("Game over player: " + Integer.toString(p.getId())+ " wins");
+                                for (CardDeck d : decks){
+                                    d.writeDeck();
+                                }
+                                break;
                             }
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+
                     }
                 }
             }.start();
         }
-          
-        for (CardDeck d : decks){
-            d.writeDeck();
-        }
-        
-    //     // write end hands
-    //     for (Player p : players) {
-    //         p.writeEnd(pWinner);
-    //     }
-    //     //print winner to terminal
-    //     system.out.println();
     }
 }
