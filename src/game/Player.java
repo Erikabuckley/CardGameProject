@@ -54,9 +54,9 @@ public class Player {
     public synchronized void writeEnd(int winner) throws IOException {
         String id = Integer.toString(getId());
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("outputFiles/player" + id + "_output.txt", true));
-        bufferedWriter.write("Player " + Integer.toString(winner) + " wins");
-        bufferedWriter.write("Player " + id + " exits");
-        bufferedWriter.write("Player " + id + " final hand " + formatOut(getCards()));
+        bufferedWriter.write("\nPlayer " + Integer.toString(winner) + " wins");
+        bufferedWriter.write("\nPlayer " + id + " exits");
+        bufferedWriter.write("\nPlayer " + id + " final hand " + formatOut(getCards()));
         bufferedWriter.close();
     }
 

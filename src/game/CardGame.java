@@ -5,6 +5,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.CyclicBarrier;
+
 
 public class CardGame {
     
@@ -116,18 +118,17 @@ public class CardGame {
         }
 
         final int numPlayers = playerNumber;
+        CyclicBarrier barrier = new CyclicBarrier(numPlayers);
         
         // creates threads
         for (Player p : players) {
             new Thread("Player " + Integer.toString(p.getId())) {  
                 public void run(){
-                    while(!gameOver){ //sets flag
-                        try {
+                    try {
+                        while(!gameOver){ //sets flag
                             if (!p.checkIfWon()) {
-                                synchronized(CardGame.class) {
-                                    p.draw(decks.get(p.getId() - 1));
-                                    p.discard(decks.get((p.getId() + 1) % numPlayers));
-                                }
+                                p.draw(decks.get(p.getId() - 1));
+                                p.discard(decks.get((p.getId()) % numPlayers));
                             } else {
                                 gameOver = true;
                                 for (Player player : players) { 
@@ -139,10 +140,10 @@ public class CardGame {
                                 }
                                 break;
                             }
-                        } catch (IOException e) {
-                            e.printStackTrace();
+                            barrier.await();
                         }
-
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
             }.start();
