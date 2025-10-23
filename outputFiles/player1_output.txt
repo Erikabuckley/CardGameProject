@@ -1,64 +1,94 @@
-Player 1 initial hand 9 86 77 1
-Player 1 draws 80 from deck 1
-Player 1 discards 86 to deck 2
-Player 1 current hand  9 77 1 80
-Player 1 draws 44 from deck 1
-Player 1 discards 77 to deck 2
-Player 1 current hand  9 1 80 44
-Player 1 draws 80 from deck 1
-Player 1 discards 80 to deck 2
-Player 1 current hand  9 1 44 80
-Player 1 draws 23 from deck 1
-Player 1 discards 23 to deck 2
-Player 1 current hand  9 1 44 80
-Player 1 draws 52 from deck 1
-Player 1 discards 44 to deck 2
-Player 1 current hand  9 1 80 52
-Player 1 draws 37 from deck 1
-Player 1 discards 80 to deck 2
-Player 1 current hand  9 1 52 37
+Player 1 initial hand 51 16 60 96
+Player 1 draws 81 from deck 1
+Player 1 discards 51 to deck 2
+Player 1 current hand  16 60 96 81
 Player 1 draws 83 from deck 1
+Player 1 discards 81 to deck 2
+Player 1 current hand  16 60 96 83
+Player 1 draws 71 from deck 1
+Player 1 discards 60 to deck 2
+Player 1 current hand  16 96 83 71
+Player 1 draws 2 from deck 1
+Player 1 discards 71 to deck 2
+Player 1 current hand  16 96 83 2
+Player 1 draws 60 from deck 1
+Player 1 discards 16 to deck 2
+Player 1 current hand  96 83 2 60
+Player 1 draws 16 from deck 1
 Player 1 discards 83 to deck 2
-Player 1 current hand  9 1 52 37
-Player 1 draws 62 from deck 1
-Player 1 discards 37 to deck 2
-Player 1 current hand  9 1 52 62
-Player 1 draws 5 from deck 1
-Player 1 discards 9 to deck 2
-Player 1 current hand  1 52 62 5
-Player 1 draws 48 from deck 1
-Player 1 discards 5 to deck 2
-Player 1 current hand  1 52 62 48
+Player 1 current hand  96 2 60 16
+Player 1 draws 71 from deck 1
+Player 1 discards 16 to deck 2
+Player 1 current hand  96 2 60 71
+Player 1 draws 83 from deck 1
+Player 1 discards 71 to deck 2
+Player 1 current hand  96 2 60 83
+Player 1 draws 36 from deck 1
+Player 1 discards 83 to deck 2
+Player 1 current hand  96 2 60 36
 Player 1 draws 96 from deck 1
-Player 1 discards 52 to deck 2
-Player 1 current hand  1 62 48 96
-Player 1 draws 11 from deck 1
-Player 1 discards 48 to deck 2
-Player 1 current hand  1 62 96 11
-Player 1 draws 14 from deck 1
-Player 1 discards 11 to deck 2
-Player 1 current hand  1 62 96 14
+Player 1 discards 96 to deck 2
+Player 1 current hand  2 60 36 96
+Player 1 draws 44 from deck 1
+Player 1 discards 44 to deck 2
+Player 1 current hand  2 60 36 96
+Player 1 draws 61 from deck 1
+Player 1 discards 60 to deck 2
+Player 1 current hand  2 36 96 61
+Player 1 draws 99 from deck 1
+Player 1 discards 61 to deck 2
+Player 1 current hand  2 36 96 99
+Player 1 draws 56 from deck 1
+Player 1 discards 2 to deck 2
+Player 1 current hand  36 96 99 56
+Player 1 draws 18 from deck 1
+Player 1 discards 36 to deck 2
+Player 1 current hand  96 99 56 18
+Player 1 draws 41 from deck 1
+Player 1 discards 96 to deck 2
+Player 1 current hand  99 56 18 41
 Player 1 draws 1 from deck 1
-Player 1 discards 14 to deck 2
-Player 1 current hand  1 62 96 1
-Player 1 draws 20 from deck 1
-Player 1 discards 20 to deck 2
-Player 1 current hand  1 62 96 1
-Player 1 draws 85 from deck 1
-Player 1 discards 85 to deck 2
-Player 1 current hand  1 62 96 1
+Player 1 discards 56 to deck 2
+Player 1 current hand  99 18 41 1
+Player 1 draws 23 from deck 1
+Player 1 discards 41 to deck 2
+Player 1 current hand  99 18 1 23
+Player 1 draws 21 from deck 1
+Player 1 discards 99 to deck 2
+Player 1 current hand  18 1 23 21
+Player 1 draws 2 from deck 1
+Player 1 discards 23 to deck 2
+Player 1 current hand  18 1 21 2
+Player 1 draws 47 from deck 1
+Player 1 discards 2 to deck 2
+Player 1 current hand  18 1 21 47
+Player 1 draws 46 from deck 1
+Player 1 discards 46 to deck 2
+Player 1 current hand  18 1 21 47
+Player 1 draws 27 from deck 1
+Player 1 discards 47 to deck 2
+Player 1 current hand  18 1 21 27
+Player 1 draws 23 from deck 1
+Player 1 discards 27 to deck 2
+Player 1 current hand  18 1 21 23
+Player 1 draws 2 from deck 1
+Player 1 discards 2 to deck 2
+Player 1 current hand  18 1 21 23
+Player 1 draws 46 from deck 1
+Player 1 discards 21 to deck 2
+Player 1 current hand  18 1 23 46
+Player 1 draws 39 from deck 1
+Player 1 discards 23 to deck 2
+Player 1 current hand  18 1 46 39
+Player 1 draws 12 from deck 1
+Player 1 discards 18 to deck 2
+Player 1 current hand  1 46 39 12
+Player 1 draws 46 from deck 1
+Player 1 discards 39 to deck 2
+Player 1 current hand  1 46 12 46
 Player 1 draws 26 from deck 1
 Player 1 discards 26 to deck 2
-Player 1 current hand  1 62 96 1
-Player 1 draws 1 from deck 1
-Player 1 discards 96 to deck 2
-Player 1 current hand  1 62 1 1
-Player 1 draws 77 from deck 1
-Player 1 discards 77 to deck 2
-Player 1 current hand  1 62 1 1
-Player 1 draws 1 from deck 1
-Player 1 discards 62 to deck 2
-Player 1 current hand  1 1 1 1
-Player 1 wins
+Player 1 current hand  1 46 12 46
+Player 2 wins
 Player 1 exits
-Player 1 final hand  1 1 1 1
+Player 1 final hand  1 46 12 46

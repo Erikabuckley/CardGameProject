@@ -1,0 +1,94 @@
+Player 5 initial hand 16 60 96 23
+Player 5 draws 83 from deck 5
+Player 5 discards 60 to deck 1
+Player 5 current hand  16 96 23 83
+Player 5 draws 71 from deck 5
+Player 5 discards 16 to deck 1
+Player 5 current hand  96 23 83 71
+Player 5 draws 2 from deck 5
+Player 5 discards 71 to deck 1
+Player 5 current hand  96 23 83 2
+Player 5 draws 36 from deck 5
+Player 5 discards 83 to deck 1
+Player 5 current hand  96 23 2 36
+Player 5 draws 44 from deck 5
+Player 5 discards 36 to deck 1
+Player 5 current hand  96 23 2 44
+Player 5 draws 99 from deck 5
+Player 5 discards 96 to deck 1
+Player 5 current hand  23 2 44 99
+Player 5 draws 18 from deck 5
+Player 5 discards 44 to deck 1
+Player 5 current hand  23 2 99 18
+Player 5 draws 61 from deck 5
+Player 5 discards 61 to deck 1
+Player 5 current hand  23 2 99 18
+Player 5 draws 56 from deck 5
+Player 5 discards 99 to deck 1
+Player 5 current hand  23 2 18 56
+Player 5 draws 1 from deck 5
+Player 5 discards 56 to deck 1
+Player 5 current hand  23 2 18 1
+Player 5 draws 23 from deck 5
+Player 5 discards 18 to deck 1
+Player 5 current hand  23 2 1 23
+Player 5 draws 41 from deck 5
+Player 5 discards 41 to deck 1
+Player 5 current hand  23 2 1 23
+Player 5 draws 46 from deck 5
+Player 5 discards 1 to deck 1
+Player 5 current hand  23 2 23 46
+Player 5 draws 27 from deck 5
+Player 5 discards 23 to deck 1
+Player 5 current hand  23 2 46 27
+Player 5 draws 21 from deck 5
+Player 5 discards 21 to deck 1
+Player 5 current hand  23 2 46 27
+Player 5 draws 47 from deck 5
+Player 5 discards 2 to deck 1
+Player 5 current hand  23 46 27 47
+Player 5 draws 2 from deck 5
+Player 5 discards 47 to deck 1
+Player 5 current hand  23 46 27 2
+Player 5 draws 42 from deck 5
+Player 5 discards 46 to deck 1
+Player 5 current hand  23 27 2 42
+Player 5 draws 46 from deck 5
+Player 5 discards 27 to deck 1
+Player 5 current hand  23 2 42 46
+Player 5 draws 12 from deck 5
+Player 5 discards 23 to deck 1
+Player 5 current hand  2 42 46 12
+Player 5 draws 71 from deck 5
+Player 5 discards 2 to deck 1
+Player 5 current hand  42 46 12 71
+Player 5 draws 35 from deck 5
+Player 5 discards 46 to deck 1
+Player 5 current hand  42 12 71 35
+Player 5 draws 39 from deck 5
+Player 5 discards 39 to deck 1
+Player 5 current hand  42 12 71 35
+Player 5 draws 46 from deck 5
+Player 5 discards 12 to deck 1
+Player 5 current hand  42 71 35 46
+Player 5 draws 16 from deck 5
+Player 5 discards 46 to deck 1
+Player 5 current hand  42 71 35 16
+Player 5 draws 26 from deck 5
+Player 5 discards 26 to deck 1
+Player 5 current hand  42 71 35 16
+Player 5 draws 83 from deck 5
+Player 5 discards 71 to deck 1
+Player 5 current hand  42 35 16 83
+Player 5 draws 83 from deck 5
+Player 5 discards 35 to deck 1
+Player 5 current hand  42 16 83 83
+Player 5 draws 60 from deck 5
+Player 5 discards 60 to deck 1
+Player 5 current hand  42 16 83 83
+Player 5 draws 73 from deck 5
+Player 5 discards 42 to deck 1
+Player 5 current hand  16 83 83 73
+Player 2 wins
+Player 5 exits
+Player 5 final hand  16 83 83 73

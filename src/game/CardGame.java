@@ -17,7 +17,7 @@ public class CardGame {
         BufferedReader bf = new BufferedReader(new FileReader(fileName));
         String line = bf.readLine();
 
-        while (line != null) {
+        while (line != null && line != " ") {
             lines.add(line);
             line = bf.readLine();
         }
@@ -33,11 +33,35 @@ public class CardGame {
         bufferedWriter.close();
     }
 
+    public static String[] getFile(int playerNumber, Scanner scanner) throws IOException{
+        boolean valid = false;
+        String fileName = "";
+        String[] lines = null;
+
+        while (!valid) {
+            System.out.println("Please enter location of pack to load: ");
+            fileName = scanner.nextLine();
+            if (fileName.contains(".txt")){
+                File f = new File(fileName);
+                if (f.exists()) {
+                    lines = readTxtFile(fileName);
+                    if (lines.length == (8 * playerNumber)) {
+                        valid = true;
+                    }else{
+                        System.out.println("Inncorect file length. Try again.");
+                    }
+                }
+            }else{
+                System.out.println("File does not exist. Try again.");
+            }
+        }
+        return lines;
+    }
+
     public static void main(String[] args) throws IOException {
 
         Boolean valid = false;
         int playerNumber = 0;
-        String fileName = "";
         ArrayList<Player> playersTemp = new ArrayList<Player>();
         ArrayList<Card> cards = new ArrayList<Card>();
         ArrayList<CardDeck> deckTemp = new ArrayList<CardDeck>();
@@ -72,26 +96,8 @@ public class CardGame {
             decks.add(temp);
         }
 
-        valid = false;
-        String[] lines = null;
-        while (!valid) {
-            System.out.println("Please enter location of pack to load: ");
-            fileName = scanner.nextLine();
-            if (fileName.contains(".txt")){
-                File f = new File(fileName);
-                if (f.exists()) {
-                    lines = readTxtFile(fileName);
-                    scanner.close();
-                    if (lines.length == (8 * playerNumber)) {
-                        valid = true;
-                    }else{
-                        System.out.println("Inncorect file length. Try again.");
-                    }
-                }
-            }else{
-                System.out.println("File does not exist. Try again.");
-            }
-        }
+        String[] lines = getFile(playerNumber, scanner);
+        scanner.close();
 
         int max = lines.length;
         for (int x = 0; x < max; x++) {

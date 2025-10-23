@@ -1,1 +1,1 @@
-deck2 contents:  26 96 77 62
+deck2 contents:  21 23 18 39 26
