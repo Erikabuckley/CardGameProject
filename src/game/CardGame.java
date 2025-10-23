@@ -104,8 +104,9 @@ public class CardGame {
             }
         }
         int totalPlayerCards = 4 * playerNumber;
-        List<Card> leftOver = cards.subList(totalPlayerCards, (cards.size()));
-
+        List<Card> leftOver = cards.subList(totalPlayerCards, (cards.size())); 
+        
+        // using the left over cards, adding them to the decks of players
         for (int x = 0; x < 4; x++) {
             for (int y = 0; y < playerNumber; y++) {
                 decks.get(y).addCard(leftOver.get(4 * x + y));
