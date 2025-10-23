@@ -1,7 +1,6 @@
 package game;
 
 import java.io.*;
-import java.util.Scanner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
