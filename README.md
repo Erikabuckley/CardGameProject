@@ -1,6 +1,13 @@
 # Project Name
 
 A brief description of what the project does and who it's for.
+This Card Game project was created as a submission for the ECM2414 Software Development Continuous Assessment (CA). It was developed using pair programming techniques that were taught in this module. Instructions on how to play this are below in the section 'Getting Started'.
+
+It is a card playing simulation that implements deatures such as:
+ - thread-safe classes
+ - an executable CardGame class
+ - error handling.
+
 
 ---
 
@@ -17,15 +24,15 @@ A brief description of what the project does and who it's for.
 
 ## About
 
-Describe what the project does, its purpose, and any relevant background information.
+The game simulates a card game similar to 'Pig' or 'Spoons' where players attempt to obtain a hand of identical cards by drawing and discard from a deck.  In this project, hands and decks are drawn from a pack which contains 8n cards, where n is the number of players (and a positive integer).  
+
+
 
 ---
 
 ## Features
 
-- Feature 1 — short description  
-- Feature 2 — short description  
-- Feature 3 — short description  
+To improve performance and concurrency, threads have been implemented within classes so actions may be performed as one e.g. draw and discard count as one atomic action. Using multi-threading 
 
 ---
 
@@ -54,4 +61,4 @@ java -cp bin game/CardGame
 ```
 
 ## License
-MIT lisence - see file
+MIT license - see file
