@@ -3,7 +3,7 @@ package game;
 import java.util.Random;
 import java.io.*;
 
-public class testCode{
+public class testFileGenerationCode{
     public static void main(String [] args) throws IOException{
         int n = 4;
         int max = 8 * n;

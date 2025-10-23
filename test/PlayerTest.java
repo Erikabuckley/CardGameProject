@@ -19,12 +19,12 @@ public class PlayerTest {
 
     @Test
     public void TestGetId(){
-        assertEquals("Test player instantiation works", playerOne.getId(), 1);
+        assertEquals("Test initial player instantiation works", 1, playerOne.getId());
     }
     
     @Test
     public void TestGetIdIncrements(){
-        assertEquals("Test player instantiation works", playerTwo.getId(), 2);
+        assertEquals("Test player id incrementation works", 2, playerTwo.getId());
     } 
     
 }
