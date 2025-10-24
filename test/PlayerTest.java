@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import org.junit.After;
@@ -25,10 +27,6 @@ public class PlayerTest {
     @Test
     public void testGetId() {
         assertEquals("Test initial player instantiation works", 1, playerOne.getId());
-    }
-
-    @Test
-    public void testGetIdIncrements() {
         assertEquals("Test player id incrementation works", 2, playerTwo.getId());
     }
 
@@ -69,6 +67,20 @@ public class PlayerTest {
         playerOne.addCard(card1);
 
         assertTrue(playerOne.checkIfWon());
+    }
+
+    @Test
+    public void testWriteInitialMakesFile() throws IOException {
+        File outputFolder = new File("outputFiles");
+        outputFolder.mkdir();
+
+        playerOne.writeInitial();
+
+        File file = new File("outputFiles/player" + playerOne.getId() + "_output.txt");
+        assertTrue(file.exists());
+
+        // clean up
+        file.delete();
     }
 
     @After

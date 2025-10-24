@@ -1,9 +1,11 @@
 package test;
 
+import java.io.File;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import game.CardGame;
+import game.*;
 
 public class CardGameTest {
     private CardGame game;
@@ -13,16 +15,27 @@ public class CardGameTest {
         game = new CardGame();
     }
 
+    //test read file
+    @Test
+    public void testReadTxtFile(){
+        File outputFolder = new File("outputFiles");
+        outputFolder.mkdir();
+        File file = new File("outputFiles/player.txt");
+
+        String[] lines = game.readTxtFile("outputFiles/player.txt");
+        assert
+        file.delete();
+    }
+
+    // test write file
+
+    // test get file
     // @Test
     // public void testGetFile(){
     //     assert("Test can ask for valid file", game.getFile(5, new Scanner(null)));
     // }
-    
-    // @Test
-    // public void testGetIdIncrements(){
-    //     assertEquals("Test player id incrementation works", 2, playerTwo.getId());
-    // } 
 
+    //after
     
     
 }
