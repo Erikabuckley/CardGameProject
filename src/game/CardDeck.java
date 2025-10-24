@@ -36,7 +36,6 @@ public class CardDeck {
         return cards.remove(0);
     }
 
-
     public synchronized int getId() {
         return this.id;
     }

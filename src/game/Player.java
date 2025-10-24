@@ -13,7 +13,6 @@ public class Player {
     private List<Card> cards = Collections.synchronizedList(cardsTemp); // synchronised list makes it threadsafe
     private static final Random random = new Random();
 
-
     public Player() {
         this.id = idCounter++;
 
@@ -52,7 +51,8 @@ public class Player {
 
     public synchronized void writeEnd(int winner) throws IOException {
         String id = Integer.toString(getId());
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("outputFiles/player" + id + "_output.txt", true));
+        BufferedWriter bufferedWriter = new BufferedWriter(
+                new FileWriter("outputFiles/player" + id + "_output.txt", true));
         bufferedWriter.write("\nPlayer " + Integer.toString(winner) + " wins");
         bufferedWriter.write("\nPlayer " + id + " exits");
         bufferedWriter.write("\nPlayer " + id + " final hand " + formatOut(getCards()));
@@ -101,9 +101,14 @@ public class Player {
         addCard(temp);
 
         String id = Integer.toString(getId());
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("outputFiles/player" + id + "_output.txt", true));
+        BufferedWriter bufferedWriter = new BufferedWriter(
+                new FileWriter("outputFiles/player" + id + "_output.txt", true));
         bufferedWriter.write("\nPlayer " + id + " draws " + Integer.toString(temp.getValue()) + " from deck "
                 + Integer.toString(deck.getId()));
         bufferedWriter.close();
+    }
+
+    public void reset() {
+        idCounter = 1;
     }
 }

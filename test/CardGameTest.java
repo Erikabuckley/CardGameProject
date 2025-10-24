@@ -14,12 +14,12 @@ public class CardGameTest {
     }
 
     // @Test
-    // public void TestGetFile(){
+    // public void testGetFile(){
     //     assert("Test can ask for valid file", game.getFile(5, new Scanner(null)));
     // }
     
     // @Test
-    // public void TestGetIdIncrements(){
+    // public void testGetIdIncrements(){
     //     assertEquals("Test player id incrementation works", 2, playerTwo.getId());
     // } 
 

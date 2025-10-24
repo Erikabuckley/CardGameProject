@@ -7,9 +7,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CyclicBarrier;
 
-
 public class CardGame {
-    
+
     private static volatile boolean gameOver = false;
 
     public static String[] readTxtFile(String fileName) throws IOException {
@@ -33,7 +32,7 @@ public class CardGame {
         bufferedWriter.close();
     }
 
-    public static String[] getFile(int playerNumber, Scanner scanner) throws IOException{
+    public static String[] getFile(int playerNumber, Scanner scanner) throws IOException {
         boolean valid = false;
         String fileName = "";
         String[] lines = null;
@@ -41,17 +40,17 @@ public class CardGame {
         while (!valid) {
             System.out.println("Please enter location of pack to load: ");
             fileName = scanner.nextLine();
-            if (fileName.contains(".txt")){
+            if (fileName.contains(".txt")) {
                 File f = new File(fileName);
                 if (f.exists()) {
                     lines = readTxtFile(fileName);
                     if (lines.length == (8 * playerNumber)) {
                         valid = true;
-                    }else{
+                    } else {
                         System.out.println("Inncorect file length. Try again.");
                     }
                 }
-            }else{
+            } else {
                 System.out.println("File does not exist. Try again.");
             }
         }
@@ -110,8 +109,8 @@ public class CardGame {
             }
         }
         int totalPlayerCards = 4 * playerNumber;
-        List<Card> leftOver = cards.subList(totalPlayerCards, (cards.size())); 
-        
+        List<Card> leftOver = cards.subList(totalPlayerCards, (cards.size()));
+
         // using the left over cards, adding them to the decks of players
         for (int x = 0; x < 4; x++) {
             for (int y = 0; y < playerNumber; y++) {
@@ -126,23 +125,23 @@ public class CardGame {
 
         final int numPlayers = playerNumber;
         CyclicBarrier barrier = new CyclicBarrier(numPlayers);
-        
+
         // creates threads
         for (Player p : players) {
-            new Thread("Player " + Integer.toString(p.getId())) {  
-                public void run(){
+            new Thread("Player " + Integer.toString(p.getId())) {
+                public void run() {
                     try {
-                        while(!gameOver){ //sets flag
+                        while (!gameOver) { // sets flag
                             if (!p.checkIfWon()) {
                                 p.draw(decks.get(p.getId() - 1));
                                 p.discard(decks.get((p.getId()) % numPlayers));
                             } else {
                                 gameOver = true;
-                                for (Player player : players) { 
-                                    player.writeEnd(p.getId()); 
-                                } 
-                                System.out.println("Game over player: " + Integer.toString(p.getId())+ " wins");
-                                for (CardDeck d : decks){
+                                for (Player player : players) {
+                                    player.writeEnd(p.getId());
+                                }
+                                System.out.println("Game over player: " + Integer.toString(p.getId()) + " wins");
+                                for (CardDeck d : decks) {
                                     d.writeDeck();
                                 }
                                 break;
