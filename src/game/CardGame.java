@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CyclicBarrier;
+import java.lang.*;
 
 public class CardGame {
 
@@ -148,12 +149,17 @@ public class CardGame {
                             } else {
                                 // writes to files and outputs to terminal
                                 gameOver = true;
-                                for (Player player : players) {
-                                    player.writeEnd(p.getId());
+                                synchronized (players) {
+                                    for (Player player : players) {
+                                        player.writeEnd(p.getId());
+                                    }
                                 }
                                 System.out.println("Game over player: " + Integer.toString(p.getId()) + " wins");
-                                for (CardDeck d : decks) {
-                                    d.writeDeck();
+                                
+                                synchronized (decks) {
+                                    for (CardDeck d : decks) {
+                                        d.writeDeck();
+                                    }
                                 }
                                 break;
                             }
