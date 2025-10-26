@@ -1,5 +1,4 @@
-package test;
-
+package game;
 import java.io.File;
 
 import org.junit.Before;
