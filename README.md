@@ -63,7 +63,7 @@ cd src/game
 
 ```bash
 javac -d bin src/game/*
-java -cp bin game/CardGame
+
 ```
 ---
 

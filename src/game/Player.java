@@ -53,22 +53,30 @@ public class Player {
         String id = Integer.toString(getId());
         BufferedWriter bufferedWriter = new BufferedWriter(
                 new FileWriter("outputFiles/player" + id + "_output.txt", true));
-        bufferedWriter.write("\nPlayer " + Integer.toString(winner) + " wins");
+        if (winner == getId()){
+            bufferedWriter.write("\nPlayer " + Integer.toString(winner) + " wins");
+        }else{
+            bufferedWriter.write("\nPlayer "+ winner + " has informed player " + getId() +" that player " + winner + " has won");
+        }
         bufferedWriter.write("\nPlayer " + id + " exits");
         bufferedWriter.write("\nPlayer " + id + " final hand " + formatOut(getCards()));
         bufferedWriter.close();
     }
 
     public synchronized boolean checkIfWon() {
-        int count = 0;
-        // iterate over player cards must always be four
+
+        boolean allSame = true;
         List<Card> cards = getCards();
-        for (Card c : cards) {
-            if (c.getValue() == getId()) {
-                count++;
+        if (!cards.isEmpty()) {
+            int first = cards.get(0).getValue();
+            for (Card c : cards) {
+                if (!(c.getValue() == first)) {
+                    allSame = false;
+                    break;
+                }
             }
         }
-        return count == 4;
+        return allSame;
     }
 
     public synchronized void discard(CardDeck deck) throws IOException {

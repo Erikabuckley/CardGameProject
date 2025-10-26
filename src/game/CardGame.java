@@ -16,9 +16,16 @@ public class CardGame {
         BufferedReader bf = new BufferedReader(new FileReader(fileName));
         String line = bf.readLine();
 
-        while (line != null && line != " ") {
-            lines.add(line);
-            line = bf.readLine();
+        while (line != null && !line.equals(" ")) {
+            try{
+                int lineInt = Integer.parseInt(line);
+                if (lineInt > 0){
+                    lines.add(line);
+                    line = bf.readLine();
+                } 
+            }catch(NumberFormatException e){
+                break;
+            }
         }
 
         bf.close();
@@ -49,6 +56,8 @@ public class CardGame {
                     } else {
                         System.out.println("Inncorect file length. Try again.");
                     }
+                }else{
+                    System.out.println("Invalid file. try again.");
                 }
             } else {
                 System.out.println("File does not exist. Try again.");
@@ -106,7 +115,7 @@ public class CardGame {
         //deals cards to players
         for (int x = 0; x < 4; x++) {
             for (int y = 0; y < playerNumber; y++) {
-                players.get(y).addCard(cards.get(4 * x + y));
+                players.get(y).addCard(cards.get(playerNumber * x + y));
             }
         }
         int totalPlayerCards = 4 * playerNumber;
@@ -115,7 +124,7 @@ public class CardGame {
         // using the left over cards, adding them to the decks of players
         for (int x = 0; x < 4; x++) {
             for (int y = 0; y < playerNumber; y++) {
-                decks.get(y).addCard(leftOver.get(4 * x + y));
+                decks.get(y).addCard(leftOver.get(playerNumber * x + y));
             }
         }
 
