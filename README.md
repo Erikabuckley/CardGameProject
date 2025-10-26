@@ -66,12 +66,6 @@ javac -d bin src/game/*
 java -cp bin game/CardGame
 ```
 ---
-### Running the test suite
-The project contains unit tests for the ... classes
-#### Install
-#### Setup
-#### Run the tests
-#### Test results
 
 ## License
 MIT license - see file
