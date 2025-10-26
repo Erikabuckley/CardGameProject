@@ -1,5 +1,4 @@
-# Project Name
-ECM2414 Software Development Continuous Assessment (CA): Card Game
+# ECM2414 Software Development Continuous Assessment (CA): Card Game
 ---
 
 ## Table of Contents
