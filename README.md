@@ -1,4 +1,4 @@
-# ECM2414 Software Development Continuous Assessment (CA): Card Game
+# Card Game project for ECM2414 Software Development Continuous Assessment (CA)
 ---
 
 ## Table of Contents
@@ -15,7 +15,7 @@
 
 ## About
 
-This Card Game project was created as a submission for the ECM2414 Software Development Continuous Assessment (CA). It was developed using pair programming techniques that were taught in this module. Instructions on how to play this are below, in the section 'Getting Started'.
+This Card Game project was created as a submission for the ECM2414 Software Development Continuous Assessment. It was developed using pair programming techniques that were taught in this module. Instructions on how to play this are below, in the section 'Getting Started'.
 
 It is a card playing simulation witten in Java that implements features such as:
  - thread-safe classes

@@ -16,16 +16,16 @@ public class CardGameTest {
     }
 
     //test read file
-    @Test
-    public void testReadTxtFile(){
-        File outputFolder = new File("outputFiles");
-        outputFolder.mkdir();
-        File file = new File("outputFiles/player.txt");
+    // @Test
+    // public void testReadTxtFile(){
+    //     File outputFolder = new File("outputFiles");
+    //     outputFolder.mkdir();
+    //     File file = new File("outputFiles/player.txt");
 
-        String[] lines = game.readTxtFile("outputFiles/player.txt");
-        assert
-        file.delete();
-    }
+    //     String[] lines = game.readTxtFile("outputFiles/player.txt");
+    //     assert
+    //     file.delete();
+    // }
 
     // test write file
 

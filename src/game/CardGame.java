@@ -31,7 +31,7 @@ public class CardGame {
         bufferedWriter.write(text);
         bufferedWriter.close();
     }
-
+     //uses error handling to ensure valid input from the user
     public static String[] getFile(int playerNumber, Scanner scanner) throws IOException {
         boolean valid = false;
         String fileName = "";
@@ -103,6 +103,7 @@ public class CardGame {
             cards.add(new Card(Integer.parseInt(lines[x])));
         }
 
+        //deals cards to players
         for (int x = 0; x < 4; x++) {
             for (int y = 0; y < playerNumber; y++) {
                 players.get(y).addCard(cards.get(4 * x + y));
@@ -136,6 +137,7 @@ public class CardGame {
                                 p.draw(decks.get(p.getId() - 1));
                                 p.discard(decks.get((p.getId()) % numPlayers));
                             } else {
+                                // writes to files and outputs to terminal
                                 gameOver = true;
                                 for (Player player : players) {
                                     player.writeEnd(p.getId());

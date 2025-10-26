@@ -39,7 +39,7 @@ public class CardDeck {
     public synchronized int getId() {
         return this.id;
     }
-
+    //writes the deck at end of game to specific deck file
     public synchronized void writeDeck() throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(
                 new FileWriter("outputFiles/deck" + Integer.toString(getId()) + "_output.txt"));
