@@ -37,7 +37,7 @@ public class CardGameTest {
     //after
     @After
     public void cleanUp() {
-        
+        game.reset()      
     
     
 }
