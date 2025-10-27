@@ -22,7 +22,7 @@ public class CardGameTest {
     //     File file = new File("outputFiles/player.txt");
 
     //     String[] lines = game.readTxtFile("outputFiles/player.txt");
-    //     assert
+    //     
     //     file.delete();
     // }
 
@@ -35,6 +35,9 @@ public class CardGameTest {
     // }
 
     //after
+    @After
+    public void cleanUp() {
+        
     
     
 }
