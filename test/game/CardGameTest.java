@@ -35,9 +35,9 @@ public class CardGameTest {
     // }
 
     //after
-    @After
-    public void cleanUp() {
-        game.reset()      
+    // @After
+    // public void cleanUp() {
+    //     game.reset()      
     
     
 }

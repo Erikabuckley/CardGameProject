@@ -12,7 +12,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import game.*;
+
 public class DeckTest {
+    CardDeck deckOne;
+    CardDeck deckTwo;
 
     //before
     @Before
@@ -48,7 +52,7 @@ public class DeckTest {
         List<Card> cards = deckOne.getCards();
         assertTrue(cards.contains(c));
 
-        deckOne.removeCard(c);
+        deckOne.removeCard();
         List<Card> newCards = deckOne.getCards();
         assertFalse(newCards.contains(c));
     }

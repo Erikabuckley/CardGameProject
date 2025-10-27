@@ -1,7 +1,6 @@
 package game;
 
 import java.io.*;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -45,5 +44,9 @@ public class CardDeck {
                 new FileWriter("outputFiles/deck" + Integer.toString(getId()) + "_output.txt"));
         bufferedWriter.write("deck" + Integer.toString(getId()) + " contents: " + formatOut(getCards()));
         bufferedWriter.close();
+    }
+
+    public void reset() {
+        idCounter = 1;
     }
 }
