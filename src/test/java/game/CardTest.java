@@ -1,10 +1,11 @@
-package test.game;
+package test.java.game;
 
 import static org.junit.Assert.assertEquals;
 
-import game.*;
 import org.junit.Before;
 import org.junit.Test;
+
+import main.java.game.*;
 
 
 public class CardTest {

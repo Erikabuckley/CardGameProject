@@ -1,10 +1,10 @@
-package test.game;
+package test.java.game;
 import java.io.File;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import game.*;
+import main.java.game.*;
 
 public class CardGameTest {
     private CardGame game;
