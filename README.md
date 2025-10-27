@@ -53,7 +53,8 @@ cd src/game
 ### Running the project
 
 ```bash
-javac -d bin src/game/*
+javac -d bin src/main/java/game/*
+java -cp bin src/game/CardGame
 
 ```
 ---
