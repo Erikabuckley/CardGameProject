@@ -13,5 +13,16 @@ dependencies {
 }
 
 application {
-    mainClass = 'game.CardGame'
+    mainClass = 'CardGame'
+}
+
+test {
+    outputs.upToDateWhen
+        {false}
+    
+    testLogging {
+        events "failed", "passed", "skipped"
+        exceptionFormat = "full"
+        showStandardStreams = true
+    }
 }
