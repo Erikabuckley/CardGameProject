@@ -75,16 +75,18 @@ Check if gradle is installed using
      
 ### Run the tests
 
-Use this command if you've got Gradle installed.
+If Gradle is installed, run the following to build and run the test files
 
-    gradle test
-This runs all the tests.
+```bash
+./gradlew clean build test --warning-mode all
+```
 
 ### Test results
 If all the tests pass, this should come up in the terminal
-
+```bash
     BUILD SUCCESSFUL
-    3 actionable tasks: 3 executed, 0 up to date
+    8 actionable tasks: 8 executed
+```
     
 All were executed successfully, if any fail, details will be displayed in the terminal.
 
