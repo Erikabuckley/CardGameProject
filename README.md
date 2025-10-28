@@ -92,5 +92,11 @@ java -cp build/classes/java/main game.CardGame
 Type player number and file name matching to player number, including full path
 eg 4 and src/test/java/game/testFiles/valid4.txt
 
+## Example run
+
+For 4 players this would be the output
+
+![Example run](egRun.png)
+
 ## License
 MIT license - see file

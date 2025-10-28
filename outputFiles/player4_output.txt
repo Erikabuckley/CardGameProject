@@ -1,70 +1,58 @@
 Player 4 initial hand 83 4 37 14
 Player 4 draws 52 from deck 4
-Player 4 discards 83 to deck 1
-Player 4 current hand  4 37 14 52
-Player 4 draws 11 from deck 4
-Player 4 discards 14 to deck 1
-Player 4 current hand  4 37 52 11
-Player 4 draws 62 from deck 4
-Player 4 discards 62 to deck 1
-Player 4 current hand  4 37 52 11
-Player 4 draws 1 from deck 4
 Player 4 discards 37 to deck 1
-Player 4 current hand  4 52 11 1
-Player 4 draws 48 from deck 4
-Player 4 discards 48 to deck 1
-Player 4 current hand  4 52 11 1
-Player 4 draws 25 from deck 4
-Player 4 discards 11 to deck 1
-Player 4 current hand  4 52 1 25
-Player 4 draws 5 from deck 4
-Player 4 discards 1 to deck 1
-Player 4 current hand  4 52 25 5
-Player 4 draws 85 from deck 4
-Player 4 discards 5 to deck 1
-Player 4 current hand  4 52 25 85
-Player 4 draws 4 from deck 4
-Player 4 discards 52 to deck 1
-Player 4 current hand  4 25 85 4
-Player 4 draws 53 from deck 4
-Player 4 discards 25 to deck 1
-Player 4 current hand  4 85 4 53
-Player 4 draws 96 from deck 4
-Player 4 discards 96 to deck 1
-Player 4 current hand  4 85 4 53
+Player 4 current hand  83 4 14 52
+Player 4 draws 11 from deck 4
+Player 4 discards 83 to deck 1
+Player 4 current hand  4 14 52 11
+Player 4 draws 62 from deck 4
+Player 4 discards 14 to deck 1
+Player 4 current hand  4 52 11 62
 Player 4 draws 1 from deck 4
-Player 4 discards 1 to deck 1
-Player 4 current hand  4 85 4 53
+Player 4 discards 62 to deck 1
+Player 4 current hand  4 52 11 1
+Player 4 draws 53 from deck 4
+Player 4 discards 52 to deck 1
+Player 4 current hand  4 11 1 53
 Player 4 draws 25 from deck 4
 Player 4 discards 25 to deck 1
-Player 4 current hand  4 85 4 53
-Player 4 draws 56 from deck 4
-Player 4 discards 56 to deck 1
-Player 4 current hand  4 85 4 53
-Player 4 draws 26 from deck 4
+Player 4 current hand  4 11 1 53
+Player 4 draws 5 from deck 4
+Player 4 discards 11 to deck 1
+Player 4 current hand  4 1 53 5
+Player 4 draws 4 from deck 4
+Player 4 discards 1 to deck 1
+Player 4 current hand  4 53 5 4
+Player 4 draws 1 from deck 4
+Player 4 discards 53 to deck 1
+Player 4 current hand  4 5 4 1
+Player 4 draws 85 from deck 4
+Player 4 discards 1 to deck 1
+Player 4 current hand  4 5 4 85
+Player 4 draws 25 from deck 4
+Player 4 discards 25 to deck 1
+Player 4 current hand  4 5 4 85
+Player 4 draws 1 from deck 4
 Player 4 discards 85 to deck 1
-Player 4 current hand  4 4 53 26
+Player 4 current hand  4 5 4 1
+Player 4 draws 48 from deck 4
+Player 4 discards 1 to deck 1
+Player 4 current hand  4 5 4 48
 Player 4 draws 20 from deck 4
 Player 4 discards 20 to deck 1
-Player 4 current hand  4 4 53 26
-Player 4 draws 1 from deck 4
-Player 4 discards 26 to deck 1
-Player 4 current hand  4 4 53 1
-Player 4 draws 80 from deck 4
-Player 4 discards 1 to deck 1
-Player 4 current hand  4 4 53 80
-Player 4 draws 14 from deck 4
-Player 4 discards 80 to deck 1
-Player 4 current hand  4 4 53 14
-Player 4 draws 44 from deck 4
-Player 4 discards 53 to deck 1
-Player 4 current hand  4 4 14 44
+Player 4 current hand  4 5 4 48
+Player 4 draws 98 from deck 4
+Player 4 discards 48 to deck 1
+Player 4 current hand  4 5 4 98
+Player 4 draws 26 from deck 4
+Player 4 discards 98 to deck 1
+Player 4 current hand  4 5 4 26
 Player 4 draws 86 from deck 4
-Player 4 discards 14 to deck 1
-Player 4 current hand  4 4 44 86
-Player 4 draws 77 from deck 4
-Player 4 discards 86 to deck 1
-Player 4 current hand  4 4 44 77
+Player 4 discards 26 to deck 1
+Player 4 current hand  4 5 4 86
+Player 4 draws 56 from deck 4
+Player 4 discards 5 to deck 1
+Player 4 current hand  4 4 86 56
 Player 1 has informed player 4 that player 1 has won
 Player 4 exits
-Player 4 final hand  4 4 44 77
+Player 4 final hand  4 4 86 56
