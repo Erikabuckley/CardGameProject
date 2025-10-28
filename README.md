@@ -20,15 +20,20 @@ The game simulates a card game similar to 'Pig' or 'Spoons' where players attemp
 ---
 
 ## Features
+- ### Card game mechanics
+  Deals cards to players, plays game and outputs resuplts to files.
+
 
 - ### Multi-threading
-  As the specification requires draw and discard to count as one atomic action, threading has been implemented. Actions may be performed in parallel, making the application faster and more efficient. 
-- ### Thread-safe classes
-  Multiple threads will need to access data (i.e. a deck being drawn from and discarded to) so ensuring correct function during simultaneous execution is necessary. Our code implements synchronisation to achieve this.
-    - Thread-safe Card class
-    - Thread-safe Player class
-    - Thread-safe CardDeck (FIFO) class 
-- ### Error handling
+  As the specification requires we used threading to perform actions in parralel.
+  -  Draw and discard to count as one atomic action
+  -  Multi-threading has been implemented to carry out main game loop
+  - Thread-safe  classes
+  - Syncronized methods
+
+- ### JUnit 4 test suite
+  Implements JUnit 4 testing to ensure that code works as expected and meets the assement criterea.
+
 
 ---
 
