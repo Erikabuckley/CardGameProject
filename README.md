@@ -8,9 +8,8 @@ This Card Game project was created as a submission for the ECM2414 Software Deve
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running the Project](#running-the-project)
   - [Running the Tests](#running-the-test-suite)
+  - [Running the Project](#running-the-project)
 - [License](#license)
 
 ---
@@ -41,24 +40,9 @@ Make sure you have the following installed:
 - [Java JDK 17+](https://www.oracle.com/java/technologies/javase-downloads.html)
 - A code editor or IDE like [IntelliJ IDEA](https://www.jetbrains.com/idea/) or [Eclipse](https://www.eclipse.org/)
 
-### Installation
 
-```bash
-# Clone the repository
-git clone https://github.com/Erikabuckley/CardGameProject
+## Running the Tests
 
-# Navigate into the project directory
-cd src/game
-```
-### Running the project
-
-```bash
-javac -d bin src/main/java/game/*
-java -cp bin game/CardGame
-
-```
----
-## Running the test suite
 The tests for this project are written with JUnit 4 and Gradle
 
 ### Installations
@@ -78,7 +62,7 @@ Check if gradle is installed using
 If Gradle is installed, run the following to build and run the test files
 
 ```bash
-./gradlew clean build test --warning-mode all
+./gradlew clean build test
 ```
 
 ### Test results
@@ -90,6 +74,10 @@ If all the tests pass, this should come up in the terminal
     
 All were executed successfully, if any fail, details will be displayed in the terminal.
 
+## Running the Project
+```bash
+java -cp build/classes/java/main game.CardGame
+```
 
 ## License
 MIT license - see file
