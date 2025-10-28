@@ -66,8 +66,6 @@ JUnit4, Java 8 and Gradle
 
 ### Getting Started
 
-have stuff to do with gradle here
-
     unzip cardsTest.zip
     cd Gradle 
     
