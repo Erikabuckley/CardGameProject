@@ -46,7 +46,7 @@ Make sure you have the following installed:
 The tests for this project are written with JUnit 4 and Gradle
 
 ### Installations
-JUnit4, Java 8 and Gradle
+JUnit4, Java 17 and Gradle
 
 ### Getting Started
 
