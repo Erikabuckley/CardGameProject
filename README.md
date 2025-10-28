@@ -50,13 +50,12 @@ JUnit4, Java 17 and Gradle
 
 ### Getting Started
 
-    unzip cardsTest.zip
-    cd Gradle 
-    
-Check if gradle is installed using
+Navigate to home directory
 
-    gradle - v
-     
+```bash
+cd CardGameProject
+```
+      
 ### Run the tests
 
 If Gradle is installed, run the following to build and run the test files
@@ -66,18 +65,32 @@ If Gradle is installed, run the following to build and run the test files
 ```
 
 ### Test results
-If all the tests pass, this should come up in the terminal
+
+If all the tests pass, the following should come up in the terminal
+
 ```bash
     BUILD SUCCESSFUL
     8 actionable tasks: 8 executed
 ```
-    
-All were executed successfully, if any fail, details will be displayed in the terminal.
 
+Any errors will be displayed
+    
 ## Running the Project
+
+Navigate to project directory 
+
+```bash
+cd src
+```
+
+Run project using the command
+
 ```bash
 java -cp build/classes/java/main game.CardGame
 ```
+
+Type player number and file name matching to player number, including full path
+eg 4 and src/test/java/game/testFiles/valid4.txt
 
 ## License
 MIT license - see file
