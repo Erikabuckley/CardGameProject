@@ -1,5 +1,8 @@
 package game;
+import static org.junit.Assert.assertArrayEquals;
+
 import java.io.File;
+import java.io.IOException;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,30 +15,15 @@ public class CardGameTest {
         game = new CardGame();
     }
 
-    //test read file
-    // @Test
-    // public void testReadTxtFile(){
-    //     File outputFolder = new File("outputFiles");
-    //     outputFolder.mkdir();
-    //     File file = new File("outputFiles/player.txt");
+    @Test
+    public void testReadWrite() throws IOException{
+        File file = new File("outputFiles/player.txt");
+        // writes a number to file then reads it
+        CardGame.saveToTxt("outputFiles/player.txt", "2");
+        String[] lines = CardGame.readTxtFile("outputFiles/player.txt");
 
-    //     String[] lines = game.readTxtFile("outputFiles/player.txt");
-    //     
-    //     file.delete();
-    // }
-
-    // test write file
-
-    // test get file
-    // @Test
-    // public void testGetFile(){
-    //     assert("Test can ask for valid file", game.getFile(5, new Scanner(null)));
-    // }
-
-    //after
-    // @After
-    // public void cleanUp() {
-    //     game.reset()      
-    
+        assertArrayEquals(new String[] { "2" }, lines);
+        file.delete();
+    }
     
 }

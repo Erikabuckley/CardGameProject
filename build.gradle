@@ -13,7 +13,7 @@ dependencies {
 }
 
 application {
-    mainClass = 'CardGame'
+    mainClass = 'game.CardGame'
 }
 
 test {
