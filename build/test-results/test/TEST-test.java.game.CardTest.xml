@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.game.CardTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-10-27T10:07:35.080Z" hostname="codespaces-b3200d" time="0.001">
-  <properties/>
-  <testcase name="testValue" classname="test.java.game.CardTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

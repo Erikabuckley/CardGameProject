@@ -1,4 +1,4 @@
-package test.java.game;
+package game;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -11,8 +11,6 @@ import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import main.java.game.*;
 
 public class DeckTest {
     CardDeck deckOne;

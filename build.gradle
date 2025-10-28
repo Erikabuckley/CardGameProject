@@ -13,5 +13,5 @@ dependencies {
 }
 
 application {
-    mainClass = 'src.game.CardGame'
+    mainClass = 'game.CardGame'
 }

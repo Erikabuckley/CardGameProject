@@ -1,9 +1,6 @@
-package test.java.game;
+package game;
 
 import java.util.Random;
-
-import main.java.game.CardGame;
-
 import java.io.*;
 
 public class testFileGenerationCode {

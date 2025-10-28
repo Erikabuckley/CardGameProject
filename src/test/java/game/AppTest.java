@@ -1,4 +1,4 @@
-package test.java.game;
+package game;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
