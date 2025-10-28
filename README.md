@@ -58,7 +58,7 @@ cd CardGameProject
       
 ### Run the tests
 
-If Gradle is installed, run the following to build and run the test files
+Run the following to build and run the test files
 
 ```bash
 ./gradlew clean build test
@@ -77,19 +77,14 @@ Any errors will be displayed
     
 ## Running the Project
 
-Navigate to project directory 
-
-```bash
-cd src
-```
-
 Run project using the command
 
 ```bash
 java -cp build/classes/java/main game.CardGame
 ```
 
-Type player number and file name matching to player number, including full path
+Type player number and file name matching to player number, including full path:
+
 eg 4 and src/test/java/game/testFiles/valid4.txt
 
 ## Example run
