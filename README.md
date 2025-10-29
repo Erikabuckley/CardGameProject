@@ -75,7 +75,7 @@ If all the tests pass, the following should come up in the terminal
 
 ```bash
     BUILD SUCCESSFUL
-    8 actionable tasks: 8 executed
+    9 actionable tasks: 9 executed
 ```
 
 Any errors will be displayed
