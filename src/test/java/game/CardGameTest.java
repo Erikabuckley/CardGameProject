@@ -112,6 +112,5 @@ public class CardGameTest {
         String consoleOutput = outputStream.toString();
         System.out.println(consoleOutput);
         assertTrue(consoleOutput.contains("Inncorect file length/ contains invalid characters. Try again."));
-
     }
 }

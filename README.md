@@ -92,6 +92,9 @@ Type player number and file name matching to player number, including full path:
 
 eg 4 and src/test/java/game/testFiles/valid4.txt
 
+If valid pack then winner will be displayed on screen. Press ctrl + c to quit.
+If not valid pack game will loop forever.
+
 ## Example run
 
 For 4 players this would be the output
