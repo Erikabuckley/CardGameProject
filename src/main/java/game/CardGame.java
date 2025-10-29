@@ -66,9 +66,29 @@ public class CardGame {
         return lines;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static int getNumber(Scanner scanner){
+        boolean valid = false;
+        int playerNumber = 0;
+        while (!valid) {
+            valid = true;
+            // gather input data
+            System.out.println("Please enter the number of players: ");
+            String playerNumberString = scanner.nextLine();
+            try {
+                playerNumber = Integer.parseInt(playerNumberString);
+                if (playerNumber <= 0) {
+                    System.out.println("Must be greater than 0.");
+                    valid = false;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Must be a number.");
+                valid = false;
+            }
+        }
+        return playerNumber;
+    }
 
-        Boolean valid = false;
+    public static void main(String[] args) throws IOException {
         int playerNumber = 0;
         ArrayList<Player> playersTemp = new ArrayList<Player>();
         ArrayList<Card> cards = new ArrayList<Card>();
@@ -79,20 +99,8 @@ public class CardGame {
         List<CardDeck> decks = Collections.synchronizedList(deckTemp);
 
         Scanner scanner = new Scanner(System.in);
-        while (!valid) {
-            valid = true;
-            // gather input data
-            System.out.println("Please enter the number of players: ");
-            String playerNumberString = scanner.nextLine();
-            try {
-                playerNumber = Integer.parseInt(playerNumberString);
-                if (playerNumber <= 0) {
-                    valid = false;
-                }
-            } catch (NumberFormatException e) {
-                valid = false;
-            }
-        }
+
+        playerNumber = getNumber(scanner);
 
         for (int x = 0; x < playerNumber; x++) {
             Player temp = new Player();
