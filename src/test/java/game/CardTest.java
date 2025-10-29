@@ -16,7 +16,7 @@ public class CardTest {
 
     //test card created and value correct
     @Test 
-    public void testValue() {
+    public void testGetValue() {
         assertEquals("Test card creation works", 1, card.getValue());
     }
 }

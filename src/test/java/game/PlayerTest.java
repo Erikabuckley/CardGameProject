@@ -65,6 +65,18 @@ public class PlayerTest {
         playerOne.addCard(card1);
 
         assertTrue(playerOne.checkIfWon());
+
+        playerOne.removeCard(card1);
+        playerOne.removeCard(card1);
+        playerOne.removeCard(card1);
+        playerOne.removeCard(card1);
+        playerOne.addCard(card1);
+        playerOne.addCard(card1);
+        playerOne.addCard(card1);
+        playerOne.addCard(card1);
+
+        assertTrue(playerOne.checkIfWon());
+
     }
 
     @Test

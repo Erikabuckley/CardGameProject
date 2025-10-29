@@ -91,7 +91,28 @@ public class CardGameTest {
 
         String consoleOutput = outputStream.toString();
         System.out.println(consoleOutput);
-        assertTrue(consoleOutput.contains("Inncorect file length. Try again."));
+        assertTrue(consoleOutput.contains("Inncorect file length/ contains invalid characters. Try again."));
+
+    }
+
+    @Test
+    public void testGetFileInvalid2() throws IOException {
+        int num = 3;
+        String invFile = "src/test/java/game/testFiles/invalid3.txt";
+        String vFile = "src/test/java/game/testFiles/valid3.txt";
+        fileIn = new ByteArrayInputStream((invFile + "\n" + vFile  + "\n").getBytes());
+        outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+
+        String[] lines = CardGame.getFile(num, new Scanner (fileIn));
+        String [] realLines = CardGame.readTxtFile(vFile);
+
+        assertArrayEquals(realLines, lines);
+
+        String consoleOutput = outputStream.toString();
+        System.out.println(consoleOutput);
+        assertTrue(consoleOutput.contains("Inncorect file length/ contains invalid characters. Try again."));
 
     }
 

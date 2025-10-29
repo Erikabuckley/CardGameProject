@@ -54,10 +54,10 @@ public class CardGame {
                     if (lines.length == (8 * playerNumber)) {
                         valid = true;
                     } else {
-                        System.out.println("Inncorect file length. Try again.");
+                        System.out.println("Inncorect file length/ contains invalid characters. Try again.");
                     }
                 }else{
-                    System.out.println("Invalid file. try again.");
+                    System.out.println("File does not exist. Try again.");
                 }
             } else {
                 System.out.println("File does not exist. Try again.");
