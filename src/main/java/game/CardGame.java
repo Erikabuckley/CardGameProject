@@ -88,8 +88,7 @@ public class CardGame {
         return playerNumber;
     }
 
-    public static void main(String[] args) throws IOException {
-        int playerNumber = 0;
+    public static void runGame(int playerNumber, Scanner scanner) throws IOException {
         ArrayList<Player> playersTemp = new ArrayList<Player>();
         ArrayList<Card> cards = new ArrayList<Card>();
         ArrayList<CardDeck> deckTemp = new ArrayList<CardDeck>();
@@ -97,10 +96,6 @@ public class CardGame {
         // make them thread safe
         List<Player> players = Collections.synchronizedList(playersTemp);
         List<CardDeck> decks = Collections.synchronizedList(deckTemp);
-
-        Scanner scanner = new Scanner(System.in);
-
-        playerNumber = getNumber(scanner);
 
         for (int x = 0; x < playerNumber; x++) {
             Player temp = new Player();
@@ -171,6 +166,7 @@ public class CardGame {
                                 break;
                             }
                             barrier.await();
+                            if (gameOver) break;
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -178,5 +174,13 @@ public class CardGame {
                 }
             }.start();
         }
+        return;
     }
+
+    public static void main(String[] args) throws IOException{
+        Scanner scanner = new Scanner(System.in);
+        int numPlayers = getNumber(scanner);
+        runGame(numPlayers, scanner);
+    }
+
 }

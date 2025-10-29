@@ -38,7 +38,6 @@ public class CardGameTest {
         outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
 
-
         CardGame.getNumber(new Scanner (dataIn));
 
         String consoleOutput = outputStream.toString();
@@ -115,5 +114,4 @@ public class CardGameTest {
         assertTrue(consoleOutput.contains("Inncorect file length/ contains invalid characters. Try again."));
 
     }
-
 }
