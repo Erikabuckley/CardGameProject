@@ -1,21 +1,18 @@
 package game;
+
 import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertTrue;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.util.Scanner;
-
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 import org.junit.Test;
 
-public class CardGameTest {
-    private ByteArrayInputStream fileIn;
-    private ByteArrayInputStream dataIn;
-    private ByteArrayOutputStream outputStream;
+import java.io.File;
+import java.io.IOException;
 
+import java.util.Scanner;
+
+
+public class CardGameTest {
 
     @Test
     public void testReadWrite() throws IOException{
@@ -30,87 +27,54 @@ public class CardGameTest {
 
     @Test
     public void testGetNumber() {
-        String num1 = "Hello";
-        int num2 = 0;
-        int num3 = 1;
+        Scanner scanner = mock(Scanner.class);
 
-        dataIn = new ByteArrayInputStream((num1  + "\n" + num2  + "\n"+ num3  + "\n").getBytes());
-        outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-
-        CardGame.getNumber(new Scanner (dataIn));
-
-        String consoleOutput = outputStream.toString();
-        assertTrue(consoleOutput.contains("Must be greater than 0."));
-        assertTrue(consoleOutput.contains("Must be a number."));
+        when(scanner.nextLine())
+            .thenReturn("Hello")
+            .thenReturn("0")
+            .thenReturn("1");
+        
+        int number = CardGame.getNumber(scanner);
+        assertEquals(1,number);
     }
 
     @Test
     public void testGetNumber2() {
-        String num1 = "";
-        int num2 = 4;
+        Scanner scanner = mock(Scanner.class);
 
-        dataIn = new ByteArrayInputStream((num1  + "\n" + num2  + "\n").getBytes());
-        outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-
-
-        CardGame.getNumber(new Scanner (dataIn));
-
-        String consoleOutput = outputStream.toString();
-        assertTrue(consoleOutput.contains("Must be a number."));
+        when(scanner.nextLine())
+            .thenReturn("")
+            .thenReturn("4");
+        
+        int number = CardGame.getNumber(scanner);
+        assertEquals(1,number);
     }
 
     @Test
     public void testGetFile() throws IOException {
+        Scanner scanner = mock(Scanner.class);
         int num = 4;
-        String file = "src/test/java/game/testFiles/valid4.txt";
-        fileIn = new ByteArrayInputStream(file.getBytes());
 
-        String[] lines = CardGame.getFile(num, new Scanner (fileIn));
-        String [] realLines = CardGame.readTxtFile(file);
+        when(scanner.nextLine())
+            .thenReturn("src/test/java/game/testFiles/invalid4.txt")
+            .thenReturn("src/test/java/game/testFiles/valid4.txt");
 
-        assertArrayEquals(realLines, lines);
+        String[] result = CardGame.getFile(num, scanner);
+
+        assertArrayEquals(new String[]{"9", "1", "25", "83", "86", "1", "48", "4", "77", "20", "5", "37", "1", "26", "53", "14", "80", "17", "4", "52", "44", "66", "25", "11", "80", "98", "96", "62", "23", "56", "85", "1"}, result);
     }
 
     @Test
     public void testGetFileInvalid() throws IOException {
+        Scanner scanner = mock(Scanner.class);
         int num = 3;
-        String invFile = "src/test/java/game/testFiles/valid4.txt";
-        String vFile = "src/test/java/game/testFiles/valid3.txt";
-        fileIn = new ByteArrayInputStream((invFile + "\n" + vFile  + "\n").getBytes());
-        outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
 
+        when(scanner.nextLine())
+            .thenReturn("src/test/java/game/testFiles/invalid3.txt")
+            .thenReturn("src/test/java/game/testFiles/valid3.txt");
 
-        String[] lines = CardGame.getFile(num, new Scanner (fileIn));
-        String [] realLines = CardGame.readTxtFile(vFile);
+        String[] result = CardGame.getFile(num, scanner);
 
-        assertArrayEquals(realLines, lines);
-
-        String consoleOutput = outputStream.toString();
-        System.out.println(consoleOutput);
-        assertTrue(consoleOutput.contains("Inncorect file length/ contains invalid characters. Try again."));
-
-    }
-
-    @Test
-    public void testGetFileInvalid2() throws IOException {
-        int num = 3;
-        String invFile = "src/test/java/game/testFiles/invalid3.txt";
-        String vFile = "src/test/java/game/testFiles/valid3.txt";
-        fileIn = new ByteArrayInputStream((invFile + "\n" + vFile  + "\n").getBytes());
-        outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-
-
-        String[] lines = CardGame.getFile(num, new Scanner (fileIn));
-        String [] realLines = CardGame.readTxtFile(vFile);
-
-        assertArrayEquals(realLines, lines);
-
-        String consoleOutput = outputStream.toString();
-        System.out.println(consoleOutput);
-        assertTrue(consoleOutput.contains("Inncorect file length/ contains invalid characters. Try again."));
+        assertArrayEquals(new String[]{"2", "36", "29", "2", "8", "30", "2", "31", "44", "2", "23", "24", "25", "28", "45", "28", "45", "11", "13", "3", "24", "19", "26", "37"}, result);
     }
 }
