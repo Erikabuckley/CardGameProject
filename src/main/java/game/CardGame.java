@@ -108,7 +108,6 @@ public class CardGame {
         }
 
         String[] lines = getFile(playerNumber, scanner);
-        scanner.close();
 
         int max = lines.length;
         for (int x = 0; x < max; x++) {

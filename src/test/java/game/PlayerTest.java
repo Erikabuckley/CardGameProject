@@ -1,5 +1,6 @@
 package game;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -40,6 +41,15 @@ public class PlayerTest {
     }
 
     @Test
+    public void testGetCards(){
+        Card c = new Card(1);
+        playerOne.addCard(c);
+        List<Card> cards = playerOne.getCards();
+
+        assertTrue(cards.contains(c));
+    }
+
+    @Test
     public void testFormatOut() {
         playerOne.addCard(new Card(1));
         playerOne.addCard(new Card(2));
@@ -49,7 +59,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void testaddCard() {
+    public void testAddRemove() {
         Card c = new Card(1);
         playerOne.addCard(c);
 
@@ -59,6 +69,34 @@ public class PlayerTest {
         playerOne.removeCard(c);
         List<Card> newCards = playerOne.getCards();
         assertFalse(newCards.contains(c));
+    }
+
+    @Test
+    public void testWriteInitialMakesFile() throws IOException {
+        File outputFolder = new File("outputFiles");
+        outputFolder.mkdir();
+
+        playerOne.writeInitial();
+
+        File file = new File("outputFiles/player" + playerOne.getId() + "_output.txt");
+        assertTrue(file.exists());
+
+        // clean up
+        file.delete();
+    }
+
+    @Test
+    public void testWriteEndMakesFile() throws IOException {
+        File outputFolder = new File("outputFiles");
+        outputFolder.mkdir();
+
+        playerOne.writeEnd(1);
+
+        File file = new File("outputFiles/player" + playerOne.getId() + "_output.txt");
+        assertTrue(file.exists());
+
+        // clean up
+        file.delete();
     }
 
     @Test
@@ -89,21 +127,6 @@ public class PlayerTest {
         assertTrue(playerOne.checkIfWon());
 
     }
-
-    @Test
-    public void testWriteInitialMakesFile() throws IOException {
-        File outputFolder = new File("outputFiles");
-        outputFolder.mkdir();
-
-        playerOne.writeInitial();
-
-        File file = new File("outputFiles/player" + playerOne.getId() + "_output.txt");
-        assertTrue(file.exists());
-
-        // clean up
-        file.delete();
-    }
-
 
     @Test
     public void testDiscard() throws IOException{

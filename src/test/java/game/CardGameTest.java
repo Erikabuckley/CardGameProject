@@ -8,9 +8,7 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
-
 import java.util.Scanner;
-
 
 public class CardGameTest {
 
@@ -47,7 +45,7 @@ public class CardGameTest {
             .thenReturn("4");
         
         int number = CardGame.getNumber(scanner);
-        assertEquals(1,number);
+        assertEquals(4,number);
     }
 
     @Test
@@ -65,7 +63,7 @@ public class CardGameTest {
     }
 
     @Test
-    public void testGetFileInvalid() throws IOException {
+    public void testGetFile2() throws IOException {
         Scanner scanner = mock(Scanner.class);
         int num = 3;
 
