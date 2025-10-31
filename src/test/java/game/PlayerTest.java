@@ -1,6 +1,5 @@
 package game;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -144,7 +143,13 @@ public class PlayerTest {
             }
         }
         String id = Integer.toString(playerTwo.getId());
-        assertTrue(lines.contains("Player " + id + " discards " + card2.getValue() + " to deck " + d3.getId()));    
+        assertTrue(lines.contains("Player " + id + " discards " + card2.getValue() + " to deck " + d3.getId())); 
+        
+        File file = new File("outputFiles/player" + playerTwo.getId() + "_output.txt");
+        assertTrue(file.exists());
+
+        // clean up
+        file.delete();
     }
 
     @Test
@@ -165,6 +170,12 @@ public class PlayerTest {
         String id = Integer.toString(playerTwo.getId());
         assertTrue(lines.contains("Player " + id + " draws " + Integer.toString(c.getValue()) + " from deck "
                 + Integer.toString(d2.getId())));
+        
+                File file = new File("outputFiles/player" + playerTwo.getId() + "_output.txt");
+        assertTrue(file.exists());
+
+        // clean up
+        file.delete();
 
         
     }
