@@ -16,23 +16,22 @@ public class DeckTest {
     CardDeck deckOne;
     CardDeck deckTwo;
 
-    //before
+    // before
     @Before
     public void setUp() throws Exception {
         deckOne = new CardDeck();
         deckTwo = new CardDeck();
     }
 
-
-    //test id is correct, use 2 decks for this
-    @Test 
+    // test id is correct, use 2 decks for this
+    @Test
     public void testGetId() {
         assertEquals("Test initial deck instantiation works", 1, deckOne.getId());
         assertEquals("Test deck id incrementation works", 2, deckTwo.getId());
     }
 
-    //test format out
-    @Test 
+    // test format out
+    @Test
     public void testFormatOut() {
         deckOne.addCard(new Card(1));
         deckOne.addCard(new Card(2));
@@ -42,7 +41,7 @@ public class DeckTest {
     }
 
     // test add to deck and remove from deck
-    @Test 
+    @Test
     public void testaddCard() {
         Card c = new Card(1);
         deckOne.addCard(c);
@@ -55,8 +54,8 @@ public class DeckTest {
         assertFalse(newCards.contains(c));
     }
 
-    //test file creation use write deck
-    @Test 
+    // test file creation use write deck
+    @Test
     public void testWriteDeckMakesFile() throws IOException {
         File outputFolder = new File("outputFiles");
         outputFolder.mkdir();
@@ -66,15 +65,15 @@ public class DeckTest {
         File file = new File("outputFiles/deck" + deckOne.getId() + "_output.txt");
         assertTrue(file.exists());
 
-        //cleanup
+        // cleanup
         file.delete();
     }
 
-    //after
-    @After 
+    // after
+    @After
     public void cleanUp() {
         deckOne.reset();
         deckTwo.reset();
     }
-    
+
 }

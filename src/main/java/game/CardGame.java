@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.concurrent.CyclicBarrier;
 
 public class CardGame {
-
+    // static to ensure that all threads can access flag 
     private static volatile boolean gameOver = false;
 
     public static String[] readTxtFile(String fileName) throws IOException {
@@ -17,13 +17,13 @@ public class CardGame {
         String line = bf.readLine();
 
         while (line != null && !line.equals(" ")) {
-            try{
+            try {
                 int lineInt = Integer.parseInt(line);
-                if (lineInt > 0){
+                if (lineInt > 0) {// ensures line is a positive integer
                     lines.add(line);
                     line = bf.readLine();
-                } 
-            }catch(NumberFormatException e){
+                }
+            } catch (NumberFormatException e) {
                 break;
             }
         }
@@ -38,7 +38,7 @@ public class CardGame {
         bufferedWriter.write(text);
         bufferedWriter.close();
     }
-     //uses error handling to ensure valid input from the user
+
     public static String[] getFile(int playerNumber, Scanner scanner) throws IOException {
         boolean valid = false;
         String fileName = "";
@@ -56,7 +56,7 @@ public class CardGame {
                     } else {
                         System.out.println("Inncorect file length/ contains invalid characters. Try again.");
                     }
-                }else{
+                } else {
                     System.out.println("File does not exist. Try again.");
                 }
             } else {
@@ -66,12 +66,11 @@ public class CardGame {
         return lines;
     }
 
-    public static int getNumber(Scanner scanner){
+    public static int getNumber(Scanner scanner) {
         boolean valid = false;
         int playerNumber = 0;
         while (!valid) {
             valid = true;
-            // gather input data
             System.out.println("Please enter the number of players: ");
             String playerNumberString = scanner.nextLine();
             try {
@@ -114,7 +113,7 @@ public class CardGame {
             cards.add(new Card(Integer.parseInt(lines[x])));
         }
 
-        //deals cards to players
+        // deals cards to players
         for (int x = 0; x < 4; x++) {
             for (int y = 0; y < playerNumber; y++) {
                 players.get(y).addCard(cards.get(playerNumber * x + y));
@@ -123,14 +122,14 @@ public class CardGame {
         int totalPlayerCards = 4 * playerNumber;
         List<Card> leftOver = cards.subList(totalPlayerCards, (cards.size()));
 
-        // using the left over cards, adding them to the decks of players
+        // using the left over cards, adds them to the decks
         for (int x = 0; x < 4; x++) {
             for (int y = 0; y < playerNumber; y++) {
                 decks.get(y).addCard(leftOver.get(playerNumber * x + y));
             }
         }
 
-        // write initial hands
+        // writes initial player hands
         for (Player p : players) {
             p.writeInitial();
         }
@@ -143,17 +142,17 @@ public class CardGame {
                 public void run() {
                     try {
                         while (true) {
-                            // Check if this player wins
+                            // check if this player wins
                             if (p.checkIfWon()) {
                                 gameOver = true;
 
-                                // Write game results
+                                // write game results
                                 synchronized (players) {
                                     for (Player player : players) {
                                         player.writeEnd(p.getId());
                                     }
                                 }
-
+                                // prints winner to terminal
                                 System.out.println("Game over: Player " + p.getId() + " wins");
 
                                 synchronized (decks) {
@@ -163,10 +162,11 @@ public class CardGame {
                                 }
                             }
                             barrier.await();
-                            if (gameOver){
+                            if (gameOver) {
+                                // thread exits loop if gameOver flag is true
                                 break;
-                            }else{
-                                // Continue with normal gameplay
+                            } else {
+                                // otherwise continue with normal gameplay
                                 p.draw(decks.get(p.getId() - 1));
                                 barrier.await();
                                 p.discard(decks.get(p.getId() % numPlayers));
@@ -181,7 +181,7 @@ public class CardGame {
         }
     }
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         int numPlayers = getNumber(scanner);
         runGame(numPlayers, scanner);

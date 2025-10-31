@@ -22,7 +22,6 @@ public class PlayerTest {
     private CardDeck d2;
     private CardDeck d3;
 
-
     @Before
     public void setUp() throws Exception {
         playerOne = new Player();
@@ -40,7 +39,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void testGetCards(){
+    public void testGetCards() {
         Card c = new Card(1);
         playerOne.addCard(c);
         List<Card> cards = playerOne.getCards();
@@ -128,7 +127,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void testDiscard() throws IOException{
+    public void testDiscard() throws IOException {
         Card card2 = new Card(1);
         playerTwo.addCard(card2);
         playerTwo.addCard(card2);
@@ -136,15 +135,15 @@ public class PlayerTest {
         playerTwo.discard(d3);
         String line;
         List<String> lines = new ArrayList<String>();
-        
+
         try (BufferedReader bf = new BufferedReader(new FileReader("outputFiles/player2_output.txt"))) {
             while ((line = bf.readLine()) != null) {
                 lines.add(line);
             }
         }
         String id = Integer.toString(playerTwo.getId());
-        assertTrue(lines.contains("Player " + id + " discards " + card2.getValue() + " to deck " + d3.getId())); 
-        
+        assertTrue(lines.contains("Player " + id + " discards " + card2.getValue() + " to deck " + d3.getId()));
+
         File file = new File("outputFiles/player" + playerTwo.getId() + "_output.txt");
         assertTrue(file.exists());
 
@@ -153,7 +152,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void testDraw() throws IOException{
+    public void testDraw() throws IOException {
         Card c = new Card(1);
         d2.addCard(c);
         d2.addCard(c);
@@ -161,7 +160,7 @@ public class PlayerTest {
         playerTwo.draw(d2);
         String line;
         List<String> lines = new ArrayList<String>();
-        
+
         try (BufferedReader bf = new BufferedReader(new FileReader("outputFiles/player2_output.txt"))) {
             while ((line = bf.readLine()) != null) {
                 lines.add(line);
@@ -170,14 +169,13 @@ public class PlayerTest {
         String id = Integer.toString(playerTwo.getId());
         assertTrue(lines.contains("Player " + id + " draws " + Integer.toString(c.getValue()) + " from deck "
                 + Integer.toString(d2.getId())));
-        
-                File file = new File("outputFiles/player" + playerTwo.getId() + "_output.txt");
+
+        File file = new File("outputFiles/player" + playerTwo.getId() + "_output.txt");
         assertTrue(file.exists());
 
         // clean up
         file.delete();
 
-        
     }
 
     @After

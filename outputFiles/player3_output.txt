@@ -1,0 +1,124 @@
+Player 3 initial hand 73 56 96 60
+Player 3 draws 10 from deck 3
+Player 3 discards 56 to deck 4
+Player 3 current hand  73 96 60 10
+Player 3 draws 99 from deck 3
+Player 3 discards 99 to deck 4
+Player 3 current hand  73 96 60 10
+Player 3 draws 2 from deck 3
+Player 3 discards 60 to deck 4
+Player 3 current hand  73 96 10 2
+Player 3 draws 65 from deck 3
+Player 3 discards 65 to deck 4
+Player 3 current hand  73 96 10 2
+Player 3 draws 23 from deck 3
+Player 3 discards 10 to deck 4
+Player 3 current hand  73 96 2 23
+Player 3 draws 12 from deck 3
+Player 3 discards 73 to deck 4
+Player 3 current hand  96 2 23 12
+Player 3 draws 23 from deck 3
+Player 3 discards 96 to deck 4
+Player 3 current hand  2 23 12 23
+Player 3 draws 36 from deck 3
+Player 3 discards 23 to deck 4
+Player 3 current hand  2 12 23 36
+Player 3 draws 18 from deck 3
+Player 3 discards 23 to deck 4
+Player 3 current hand  2 12 36 18
+Player 3 draws 46 from deck 3
+Player 3 discards 36 to deck 4
+Player 3 current hand  2 12 18 46
+Player 3 draws 46 from deck 3
+Player 3 discards 18 to deck 4
+Player 3 current hand  2 12 46 46
+Player 3 draws 21 from deck 3
+Player 3 discards 46 to deck 4
+Player 3 current hand  2 12 46 21
+Player 3 draws 51 from deck 3
+Player 3 discards 12 to deck 4
+Player 3 current hand  2 46 21 51
+Player 3 draws 81 from deck 3
+Player 3 discards 46 to deck 4
+Player 3 current hand  2 21 51 81
+Player 3 draws 61 from deck 3
+Player 3 discards 51 to deck 4
+Player 3 current hand  2 21 81 61
+Player 3 draws 46 from deck 3
+Player 3 discards 2 to deck 4
+Player 3 current hand  21 81 61 46
+Player 3 draws 35 from deck 3
+Player 3 discards 35 to deck 4
+Player 3 current hand  21 81 61 46
+Player 3 draws 16 from deck 3
+Player 3 discards 61 to deck 4
+Player 3 current hand  21 81 46 16
+Player 3 draws 46 from deck 3
+Player 3 discards 46 to deck 4
+Player 3 current hand  21 81 16 46
+Player 3 draws 98 from deck 3
+Player 3 discards 98 to deck 4
+Player 3 current hand  21 81 16 46
+Player 3 draws 4 from deck 3
+Player 3 discards 81 to deck 4
+Player 3 current hand  21 16 46 4
+Player 3 draws 83 from deck 3
+Player 3 discards 83 to deck 4
+Player 3 current hand  21 16 46 4
+Player 3 draws 99 from deck 3
+Player 3 discards 99 to deck 4
+Player 3 current hand  21 16 46 4
+Player 3 draws 27 from deck 3
+Player 3 discards 4 to deck 4
+Player 3 current hand  21 16 46 27
+Player 3 draws 56 from deck 3
+Player 3 discards 21 to deck 4
+Player 3 current hand  16 46 27 56
+Player 3 draws 42 from deck 3
+Player 3 discards 42 to deck 4
+Player 3 current hand  16 46 27 56
+Player 3 draws 26 from deck 3
+Player 3 discards 26 to deck 4
+Player 3 current hand  16 46 27 56
+Player 3 draws 60 from deck 3
+Player 3 discards 60 to deck 4
+Player 3 current hand  16 46 27 56
+Player 3 draws 41 from deck 3
+Player 3 discards 56 to deck 4
+Player 3 current hand  16 46 27 41
+Player 3 draws 72 from deck 3
+Player 3 discards 16 to deck 4
+Player 3 current hand  46 27 41 72
+Player 3 draws 71 from deck 3
+Player 3 discards 71 to deck 4
+Player 3 current hand  46 27 41 72
+Player 3 draws 39 from deck 3
+Player 3 discards 27 to deck 4
+Player 3 current hand  46 41 72 39
+Player 3 draws 44 from deck 3
+Player 3 discards 46 to deck 4
+Player 3 current hand  41 72 39 44
+Player 3 draws 60 from deck 3
+Player 3 discards 41 to deck 4
+Player 3 current hand  72 39 44 60
+Player 3 draws 36 from deck 3
+Player 3 discards 72 to deck 4
+Player 3 current hand  39 44 60 36
+Player 3 draws 47 from deck 3
+Player 3 discards 60 to deck 4
+Player 3 current hand  39 44 36 47
+Player 3 draws 96 from deck 3
+Player 3 discards 39 to deck 4
+Player 3 current hand  44 36 47 96
+Player 3 draws 10 from deck 3
+Player 3 discards 10 to deck 4
+Player 3 current hand  44 36 47 96
+Player 3 draws 12 from deck 3
+Player 3 discards 96 to deck 4
+Player 3 current hand  44 36 47 12
+Player 3 draws 73 from deck 3
+Player 3 discards 44 to deck 4
+Player 3 current hand  36 47 12 73
+Player 2 has informed player 3 that player 2 has won
+Player 3 exits
+Player 3 final hand  36 47 12 73

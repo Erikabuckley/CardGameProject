@@ -3,6 +3,7 @@ package game;
 import java.util.Random;
 import java.io.*;
 
+// code used to generate valid test files
 public class testFileGenerationCode {
     public static void main(String[] args) throws IOException {
         int n = 10;

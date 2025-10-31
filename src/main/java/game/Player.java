@@ -53,10 +53,11 @@ public class Player {
         String id = Integer.toString(getId());
         BufferedWriter bufferedWriter = new BufferedWriter(
                 new FileWriter("outputFiles/player" + id + "_output.txt", true));
-        if (winner == getId()){
+        if (winner == getId()) {
             bufferedWriter.write("\nPlayer " + Integer.toString(winner) + " wins");
-        }else{
-            bufferedWriter.write("\nPlayer "+ winner + " has informed player " + getId() +" that player " + winner + " has won");
+        } else {
+            bufferedWriter.write(
+                    "\nPlayer " + winner + " has informed player " + getId() + " that player " + winner + " has won");
         }
         bufferedWriter.write("\nPlayer " + id + " exits");
         bufferedWriter.write("\nPlayer " + id + " final hand " + formatOut(getCards()));
