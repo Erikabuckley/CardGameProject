@@ -1,6 +1,7 @@
 .gradle
-build
 bin
+build
+outputFiles
 .project
 .settings
 .classpath
