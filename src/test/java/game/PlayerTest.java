@@ -146,7 +146,6 @@ public class PlayerTest {
         
     }
 
-
     @After
     public void cleanUp() {
         playerOne.reset();

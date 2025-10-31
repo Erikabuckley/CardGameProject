@@ -139,34 +139,40 @@ public class CardGame {
         final int numPlayers = playerNumber;
         CyclicBarrier barrier = new CyclicBarrier(numPlayers);
 
-        // creates threads
         for (Player p : players) {
-            new Thread("Player " + Integer.toString(p.getId())) {
+            new Thread("Player " + p.getId()) {
                 public void run() {
                     try {
-                        while (!gameOver) { // sets flag
-                            if (!p.checkIfWon()) {
-                                p.draw(decks.get(p.getId() - 1));
-                                p.discard(decks.get((p.getId()) % numPlayers));
-                            } else {
-                                // writes to files and outputs to terminal
+                        while (true) {
+                            // Check if this player wins
+                            if (p.checkIfWon()) {
                                 gameOver = true;
+
+                                // Write game results
                                 synchronized (players) {
                                     for (Player player : players) {
                                         player.writeEnd(p.getId());
                                     }
                                 }
-                                System.out.println("Game over player: " + Integer.toString(p.getId()) + " wins");
-                                
+
+                                System.out.println("Game over: Player " + p.getId() + " wins");
+
                                 synchronized (decks) {
                                     for (CardDeck d : decks) {
                                         d.writeDeck();
                                     }
                                 }
-                                break;
                             }
                             barrier.await();
-                            if (gameOver) break;
+                            if (gameOver){
+                                break;
+                            }else{
+                                // Continue with normal gameplay
+                                p.draw(decks.get(p.getId() - 1));
+                                barrier.await();
+                                p.discard(decks.get(p.getId() % numPlayers));
+                                barrier.await();
+                            }
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -174,7 +180,6 @@ public class CardGame {
                 }
             }.start();
         }
-        return;
     }
 
     public static void main(String[] args) throws IOException{
