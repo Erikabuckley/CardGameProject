@@ -1,5 +1,8 @@
 # Card Game project for ECM2414 Software Development Continuous Assessment (CA)
 
+![Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen)
+
+
 This Card Game project was created as a submission for the ECM2414 Software Development Continuous Assessment. It was developed using pair programming techniques that were taught in this module.
 
 
