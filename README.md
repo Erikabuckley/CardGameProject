@@ -5,6 +5,10 @@
 
 This Card Game project was created as a submission for the ECM2414 Software Development Continuous Assessment. It was developed using pair programming techniques that were taught in this module.
 
+# Authors: 
+ - 309879 Erika Buckley
+ - 316845 Thalia Champ
+
 
 ## Table of Contents
 - [About](#about)
