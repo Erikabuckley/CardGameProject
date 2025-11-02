@@ -16,7 +16,7 @@ public class CardGame {
         BufferedReader bf = new BufferedReader(new FileReader(fileName));
         String line = bf.readLine();
 
-        while (line != null && !line.equals(" ")) {
+        while (line != null && !line.trim().isEmpty()) {
             try {
                 int lineInt = Integer.parseInt(line);
                 if (lineInt > 0) {// ensures line is a positive integer
@@ -167,9 +167,11 @@ public class CardGame {
                                 break;
                             } else {
                                 // otherwise continue with normal gameplay
-                                p.draw(decks.get(p.getId() - 1));
-                                barrier.await();
-                                p.discard(decks.get(p.getId() % numPlayers));
+                                synchronized (p){
+                                    p.draw(decks.get(p.getId() - 1));
+                                    p.discard(decks.get(p.getId() % numPlayers));
+                                }
+
                                 barrier.await();
                             }
                         }
