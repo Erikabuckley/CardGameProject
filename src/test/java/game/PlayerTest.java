@@ -21,6 +21,15 @@ public class PlayerTest {
     private CardDeck d1;
     private CardDeck d2;
     private CardDeck d3;
+    private Card c1;
+    private Card c2;
+    private Card t1;
+    private Card t2;
+    private Card t3;
+    private Card t4;
+    private Card t5;
+    private Card t6;
+    
 
     @Before
     public void setUp() throws Exception {
@@ -29,6 +38,14 @@ public class PlayerTest {
         d1 = new CardDeck();
         d2 = new CardDeck();
         d3 = new CardDeck();
+        c1 = new Card(1);
+        c2 = new Card(2);
+        t1 = new Card(1);
+        t2 = new Card(1);
+        t3 = new Card(1);
+        t4 = new Card(2);
+        t5 = new Card(2);
+        t6 = new Card(2);
 
     }
 
@@ -40,33 +57,32 @@ public class PlayerTest {
 
     @Test
     public void testGetCards() {
-        Card c = new Card(1);
-        playerOne.addCard(c);
+        playerOne.addCard(c1);
         List<Card> cards = playerOne.getCards();
 
-        assertTrue(cards.contains(c));
+        assertTrue("Test player hand contains card that has just been added", cards.contains(c1));
+        playerOne.removeCard(c1);
     }
 
     @Test
     public void testFormatOut() {
-        playerOne.addCard(new Card(1));
-        playerOne.addCard(new Card(2));
+        playerOne.addCard(c1);
+        playerOne.addCard(c2);
 
         String formatted = playerOne.formatOut(playerOne.getCards());
-        assertEquals(" 1 2", formatted);
+        assertEquals("Tests that cards can be output as a string", " 1 2", formatted);
     }
 
     @Test
     public void testAddRemove() {
-        Card c = new Card(1);
-        playerOne.addCard(c);
+        playerOne.addCard(c1);
 
         List<Card> cards = playerOne.getCards();
-        assertTrue(cards.contains(c));
+        assertTrue("Tests cards can be added to a hand", cards.contains(c1));
 
-        playerOne.removeCard(c);
+        playerOne.removeCard(c1);
         List<Card> newCards = playerOne.getCards();
-        assertFalse(newCards.contains(c));
+        assertFalse("Tests cards can be removed form a deck", newCards.contains(c1));
     }
 
     @Test
@@ -74,12 +90,12 @@ public class PlayerTest {
         File outputFolder = new File("outputFiles");
         outputFolder.mkdir();
 
+        playerOne.addCard(c1);
         playerOne.writeInitial();
 
         File file = new File("outputFiles/player" + playerOne.getId() + "_output.txt");
-        assertTrue(file.exists());
+        assertTrue("Tests wrtieInitial makes file", file.exists());
 
-        // clean up
         file.delete();
     }
 
@@ -88,49 +104,50 @@ public class PlayerTest {
         File outputFolder = new File("outputFiles");
         outputFolder.mkdir();
 
+        playerOne.addCard(c1);
         playerOne.writeEnd(1);
 
         File file = new File("outputFiles/player" + playerOne.getId() + "_output.txt");
-        assertTrue(file.exists());
+        assertTrue("Tetss that writeEnd makes a file", file.exists());
 
-        // clean up
         file.delete();
     }
 
     @Test
     public void testCheckIfWon() {
-        Card card1 = new Card(1);
-        Card card2 = new Card(2);
-        playerOne.addCard(card1);
-        playerOne.addCard(card1);
-        playerOne.addCard(card1);
-        playerOne.addCard(card2);
+        playerOne.addCard(c2);
+        playerOne.addCard(t1);
+        playerOne.addCard(t2);
+        playerOne.addCard(t3);
 
-        assertFalse(playerOne.checkIfWon());
+        assertFalse("Tests only 4 of the same are a win", playerOne.checkIfWon());
 
-        playerOne.removeCard(card2);
-        playerOne.addCard(card1);
+        playerOne.removeCard(c2);
+        playerOne.addCard(c1);
 
-        assertTrue(playerOne.checkIfWon());
+        assertTrue("Tests 4 of the same are a win", playerOne.checkIfWon());
 
-        playerOne.removeCard(card1);
-        playerOne.removeCard(card1);
-        playerOne.removeCard(card1);
-        playerOne.removeCard(card1);
-        playerOne.addCard(card1);
-        playerOne.addCard(card1);
-        playerOne.addCard(card1);
-        playerOne.addCard(card1);
+        playerOne.removeCard(c1);
+        playerOne.removeCard(t1);
+        playerOne.removeCard(t2);
+        playerOne.removeCard(t3);
+        playerOne.addCard(c2);
+        playerOne.addCard(t4);
+        playerOne.addCard(t5);
+        playerOne.addCard(t6);
 
-        assertTrue(playerOne.checkIfWon());
+        assertTrue("Tests 4 not equal to player hand are a wnning hand", playerOne.checkIfWon());
 
+        playerOne.removeCard(c2);
+        playerOne.removeCard(t4);
+        playerOne.removeCard(t5);
+        playerOne.removeCard(t6);
     }
 
     @Test
     public void testDiscard() throws IOException {
-        Card card2 = new Card(1);
-        playerTwo.addCard(card2);
-        playerTwo.addCard(card2);
+        playerTwo.addCard(c1);
+        playerTwo.addCard(c2);
         playerTwo.writeInitial();
         playerTwo.discard(d3);
         String line;
@@ -142,20 +159,19 @@ public class PlayerTest {
             }
         }
         String id = Integer.toString(playerTwo.getId());
-        assertTrue(lines.contains("Player " + id + " discards " + card2.getValue() + " to deck " + d3.getId()));
+        assertTrue("Tests card is discarded to correct place", lines.contains("Player " + id + " discards " + c1.getValue() + " to deck " + d3.getId()));
 
         File file = new File("outputFiles/player" + playerTwo.getId() + "_output.txt");
-        assertTrue(file.exists());
+        assertTrue("Tests file is created", file.exists());
 
-        // clean up
         file.delete();
+        playerTwo.removeCard(c2);
     }
 
     @Test
     public void testDraw() throws IOException {
-        Card c = new Card(1);
-        d2.addCard(c);
-        d2.addCard(c);
+        d2.addCard(c1);
+        d2.addCard(c1);
 
         playerTwo.draw(d2);
         String line;
@@ -167,14 +183,14 @@ public class PlayerTest {
             }
         }
         String id = Integer.toString(playerTwo.getId());
-        assertTrue(lines.contains("Player " + id + " draws " + Integer.toString(c.getValue()) + " from deck "
+        assertTrue("Tests that deck can be added to by player", lines.contains("Player " + id + " draws " + Integer.toString(c1.getValue()) + " from deck "
                 + Integer.toString(d2.getId())));
 
         File file = new File("outputFiles/player" + playerTwo.getId() + "_output.txt");
         assertTrue(file.exists());
 
-        // clean up
         file.delete();
+        playerTwo.removeCard(c2);
 
     }
 

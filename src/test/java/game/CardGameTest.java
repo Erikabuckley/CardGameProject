@@ -19,7 +19,7 @@ public class CardGameTest {
         CardGame.saveToTxt("outputFiles/player.txt", "2");
         String[] lines = CardGame.readTxtFile("outputFiles/player.txt");
 
-        assertArrayEquals(new String[] { "2" }, lines);
+        assertArrayEquals("Tests the method writes data and the read method can read this", new String[] { "2" }, lines);
         file.delete();
     }
 
@@ -33,7 +33,7 @@ public class CardGameTest {
                 .thenReturn("1");
 
         int number = CardGame.getNumber(scanner);
-        assertEquals(1, number);
+        assertEquals("Tests only a valid player number is accepted", 1, number);
     }
 
     @Test
@@ -45,7 +45,7 @@ public class CardGameTest {
                 .thenReturn("4");
 
         int number = CardGame.getNumber(scanner);
-        assertEquals(4, number);
+        assertEquals("Tests only a valid player number is accepted by the system",4, number);
     }
 
     @Test
@@ -59,7 +59,7 @@ public class CardGameTest {
 
         String[] result = CardGame.getFile(num, scanner);
 
-        assertArrayEquals(
+        assertArrayEquals("Tests get file only reads in data that is a positive integer",
                 new String[] { "9", "1", "25", "83", "86", "1", "48", "4", "77", "20", "5", "37", "1", "26", "53", "14",
                         "80", "17", "4", "52", "44", "66", "25", "11", "80", "98", "96", "62", "23", "56", "85", "1" },
                 result);
@@ -76,7 +76,7 @@ public class CardGameTest {
 
         String[] result = CardGame.getFile(num, scanner);
 
-        assertArrayEquals(new String[] { "2", "36", "29", "2", "8", "30", "2", "31", "44", "2", "23", "24", "25", "28",
+        assertArrayEquals("Tests files with invalid digits are rejected",new String[] { "2", "36", "29", "2", "8", "30", "2", "31", "44", "2", "23", "24", "25", "28",
                 "45", "28", "45", "11", "13", "3", "24", "19", "26", "37" }, result);
     }
 }

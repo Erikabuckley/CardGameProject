@@ -27,7 +27,9 @@ test {
         exceptionFormat = "full"
         showStandardStreams = true
     }
-    finalizedBy jacocoTestReport // report is always generated after tests run
+    finalizedBy jacocoTestReport
+    jvmArgs "-javaagent:${classpath.find { it.name.contains('byte-buddy-agent') }}"
+
 
 }
 
