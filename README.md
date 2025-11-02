@@ -28,7 +28,7 @@ The game simulates a card game similar to 'Pig' or 'Spoons' where players attemp
 
 
 - ### Multi-threading
-  As the specification requires we used threading to perform actions in parralel.
+  As the specification requires we used threading to perform actions in parallel.
   -  Draw and discard to count as one atomic action
   -  Multi-threading has been implemented to carry out main game loop
   - Thread-safe  classes
