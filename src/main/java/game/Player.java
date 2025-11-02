@@ -26,6 +26,7 @@ public class Player {
         return this.cards;
     }
 
+    // used to display the users hand
     public synchronized String formatOut(List<Card> cards) {
         String line = "";
         for (Card c : cards) {
@@ -42,6 +43,7 @@ public class Player {
         cards.remove(card);
     }
 
+    // writes the users initial cards to their txt file
     public synchronized void writeInitial() throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(
                 new FileWriter("outputFiles/player" + Integer.toString(getId()) + "_output.txt"));
@@ -49,6 +51,7 @@ public class Player {
         bufferedWriter.close();
     }
 
+    // writes users endcards to thier txt file
     public synchronized void writeEnd(int winner) throws IOException {
         String id = Integer.toString(getId());
         BufferedWriter bufferedWriter = new BufferedWriter(
@@ -65,7 +68,7 @@ public class Player {
     }
 
     public synchronized boolean checkIfWon() {
-
+        // checks if all cards are the same - could be different to id
         boolean allSame = true;
         List<Card> cards = getCards();
         if (!cards.isEmpty()) {
@@ -104,7 +107,6 @@ public class Player {
         }
     }
 
-    // draw
     public synchronized void draw(CardDeck deck) throws IOException {
         Card temp = deck.removeCard();
         addCard(temp);

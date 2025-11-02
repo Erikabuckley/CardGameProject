@@ -11,6 +11,7 @@ public class CardGame {
     // static to ensure that all threads can access flag 
     private static volatile boolean gameOver = false;
 
+    // method to read a text file passed as a perameter, only keeps lines which are valid cards
     public static String[] readTxtFile(String fileName) throws IOException {
         List<String> lines = new ArrayList<String>();
         BufferedReader bf = new BufferedReader(new FileReader(fileName));
@@ -19,7 +20,7 @@ public class CardGame {
         while (line != null && !line.trim().isEmpty()) {
             try {
                 int lineInt = Integer.parseInt(line);
-                if (lineInt > 0) {// ensures line is a positive integer so valid for game
+                if (lineInt > 0) { // ensures line is a positive integer so valid for game
                     lines.add(line);
                     line = bf.readLine();
                 }
@@ -53,6 +54,7 @@ public class CardGame {
                     lines = readTxtFile(fileName);
                     if (lines.length == (8 * playerNumber)) {
                         valid = true;
+                    // returns a request to user to input a different file, if first is invalid
                     } else {
                         System.out.println("Inncorect file length/ contains invalid characters. Try again.");
                     }
@@ -87,6 +89,7 @@ public class CardGame {
         return playerNumber;
     }
 
+    // main game, takes number and gets file then creates threads for the players and executrs the game
     public static void runGame(int playerNumber, Scanner scanner) throws IOException {
         ArrayList<Player> playersTemp = new ArrayList<Player>();
         ArrayList<Card> cards = new ArrayList<Card>();
@@ -184,6 +187,7 @@ public class CardGame {
         }
     }
 
+    // gainser user input and then calls the runGame method to start the game
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         int numPlayers = getNumber(scanner);
