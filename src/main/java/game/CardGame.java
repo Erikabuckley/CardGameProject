@@ -19,7 +19,7 @@ public class CardGame {
         while (line != null && !line.trim().isEmpty()) {
             try {
                 int lineInt = Integer.parseInt(line);
-                if (lineInt > 0) {// ensures line is a positive integer
+                if (lineInt > 0) {// ensures line is a positive integer so valid for game
                     lines.add(line);
                     line = bf.readLine();
                 }
@@ -43,7 +43,7 @@ public class CardGame {
         boolean valid = false;
         String fileName = "";
         String[] lines = null;
-
+        // gets input from user and ensures that it is correct length and has valid digits in it
         while (!valid) {
             System.out.println("Please enter location of pack to load: ");
             fileName = scanner.nextLine();
@@ -75,7 +75,7 @@ public class CardGame {
             String playerNumberString = scanner.nextLine();
             try {
                 playerNumber = Integer.parseInt(playerNumberString);
-                if (playerNumber <= 0) {
+                if (playerNumber <= 0) { // makes sure this is a positive integer to be a valid number of players
                     System.out.println("Must be greater than 0.");
                     valid = false;
                 }
@@ -146,7 +146,7 @@ public class CardGame {
                             if (p.checkIfWon()) {
                                 gameOver = true;
 
-                                // write game results
+                                // write game results to specific files
                                 synchronized (players) {
                                     for (Player player : players) {
                                         player.writeEnd(p.getId());
@@ -155,6 +155,7 @@ public class CardGame {
                                 // prints winner to terminal
                                 System.out.println("Game over: Player " + p.getId() + " wins");
 
+                                // writes decks results to specific files
                                 synchronized (decks) {
                                     for (CardDeck d : decks) {
                                         d.writeDeck();
