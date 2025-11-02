@@ -110,7 +110,8 @@ For 4 players this would be the output
 
 
 ## Running from jar file
-To run directly from the jar file, enter this comand in the terminal:
+To run directly from the jar file, ensure that test files are in the directory. 
+Then enter this comand in the terminal:
 
 ```bash
 java -jar cards.jar
