@@ -104,5 +104,12 @@ For 4 players this would be the output
 
 ![Example run](egRun.png)
 
+
+## Running from jar file
+To run directly form the jar file, enter this comand in the terminal:
+
+```bash
+java -jar cards.jar
+```
 ## License
 MIT license - see file

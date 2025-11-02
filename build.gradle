@@ -48,3 +48,21 @@ jacoco {
     toolVersion = "0.8.13"
     reportsDirectory = layout.buildDirectory.dir('report')
 }
+
+jar {
+    archiveBaseName.set('cards')
+    manifest {
+        attributes(
+            'Main-Class': 'game.CardGame'
+        )
+
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    from(sourceSets.main.allSource) {
+        into('src')
+    }
+}
